@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // 検索結果が0件の場合のメッセージ表示
-        const visibleCards = document.querySelectorAll('.product-card[style="display: block"]');
+        const visibleCards = Array.from(productCards).filter(card => card.style.display !== 'none');
         const noResultsMessage = document.querySelector('.no-results-message');
         
         if (visibleCards.length === 0 && searchQuery !== '') {
