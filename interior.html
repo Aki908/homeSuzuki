@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インテリア雑貨 - Suzuki Zakka Store</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/kitchen-styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="#products">商品一覧</a></li>
+                <li><a href="index.html#access">アクセス</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="kitchen-header" class="sub-hero">
+            <h1>インテリア雑貨</h1>
+            <p>お部屋を彩る、暮らしの道具たち</p>
+        </section>
+
+        <section id="products" class="products-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="商品を検索..." class="search-input">
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <div class="product-card" data-name="デザインチェア" data-category="家具">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/31/04/42/seat-7354939_1280.png" alt="デザインチェア">
+                    <h3>デザインチェア</h3>
+                    <p>北欧デザインのシンプルで美しいチェア</p>
+                    <span class="price">¥12,800</span>
+                </div>
+                <div class="product-card" data-name="フロアライト" data-category="照明">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/31/04/42/seat-7354939_1280.png" alt="フロアライト">
+                    <h3>フロアライト</h3>
+                    <p>温かみのある光で空間を演出</p>
+                    <span class="price">¥8,500</span>
+                </div>
+                <div class="product-card" data-name="オーガニックキャンドル" data-category="インテリア小物">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/31/04/42/seat-7354939_1280.png" alt="オーガニックキャンドル">
+                    <h3>オーガニックキャンドル</h3>
+                    <p>天然素材を使用した優しい香りのキャンドル</p>
+                    <span class="price">¥2,800</span>
+                </div>
+                <div class="product-card" data-name="ウォールミラー" data-category="インテリア">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/31/04/42/seat-7354939_1280.png" alt="ウォールミラー">
+                    <h3>ウォールミラー</h3>
+                    <p>シンプルなデザインの壁掛けミラー</p>
+                    <span class="price">¥9,800</span>
+                </div>
+                <div class="product-card" data-name="クッションカバー" data-category="ファブリック">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/31/04/42/seat-7354939_1280.png" alt="クッションカバー">
+                    <h3>クッションカバー</h3>
+                    <p>北欧テイストのデザインクッションカバー</p>
+                    <span class="price">¥3,200</span>
+                </div>
+                <div class="product-card" data-name="プランターポット" data-category="グリーン">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/31/04/42/seat-7354939_1280.png" alt="プランターポット">
+                    <h3>プランターポット</h3>
+                    <p>陶器製のシンプルなプランターポット</p>
+                    <span class="price">¥4,200</span>
+                </div>
+                <div class="product-card" data-name="ウォールシェルフ" data-category="収納">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/31/04/42/seat-7354939_1280.png" alt="ウォールシェルフ">
+                    <h3>ウォールシェルフ</h3>
+                    <p>壁面を有効活用できるシェルフ</p>
+                    <span class="price">¥6,800</span>
+                </div>
+                <div class="product-card" data-name="アロマディフューザー" data-category="インテリア小物">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/31/04/42/seat-7354939_1280.png" alt="アロマディフューザー">
+                    <h3>アロマディフューザー</h3>
+                    <p>デザイン性の高い超音波式ディフューザー</p>
+                    <span class="price">¥5,800</span>
+                </div>
+                <div class="product-card" data-name="フォトフレーム" data-category="インテリア小物">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/31/04/42/seat-7354939_1280.png" alt="フォトフレーム">
+                    <h3>フォトフレーム</h3>
+                    <p>木製のシンプルなフォトフレーム</p>
+                    <span class="price">¥2,500</span>
+                </div>
+                <div class="product-card" data-name="ルームフレグランス" data-category="インテリア小物">
+                    <img src="https://cdn.pixabay.com/photo/2022/07/31/04/42/seat-7354939_1280.png" alt="ルームフレグランス">
+                    <h3>ルームフレグランス</h3>
+                    <p>さわやかな香りのルームフレグランス</p>
+                    <span class="price">¥3,800</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Suzuki Zakka Store. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/kitchen-search.js"></script>
+</body>
+</html>
