@@ -51,7 +51,15 @@
 </head>
 <body>
     <header>
-        <nav>
+        <!-- ハンバーガーメニューボタン -->
+        <button class="menu-toggle" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- PC用ナビゲーション -->
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="#concept">コンセプト</a></li>
                 <li class="dropdown">
@@ -66,6 +74,26 @@
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
         </nav>
+        <!-- モバイル用スライドメニュー -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#concept">コンセプト</a></li>
+                    <li class="mobile-dropdown">
+                        <a href="#" class="mobile-dropdown-toggle">商品一覧</a>
+                        <ul class="mobile-dropdown-menu">
+                            <li><a href="kitchen.html">キッチン用品</a></li>
+                            <li><a href="interior.html">インテリア雑貨</a></li>
+                            <li><a href="notImplemented.html">ステーショナリー</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#access">アクセス</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- オーバーレイ背景 -->
+        <div class="menu-overlay"></div>
     </header>
 
     <main>
@@ -139,5 +167,6 @@
     <footer>
         <p>&copy; 2025 Suzuki Zakka Store. All rights reserved.</p>
     </footer>
+    <script src="assets/menu.js"></script>
 </body>
 </html>
