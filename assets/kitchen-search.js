@@ -3,12 +3,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const productsGrid = document.getElementById('productsGrid');
     const productCards = document.querySelectorAll('.product-card');
 
-    // Web Workerの初期化（パスを環境に応じて解決）
-    const workerPath = window.siteConfig.getAssetPath('assets/search-worker.js');
-    const searchWorker = new Worker(workerPath);
+    // Web Workerの初期化（フルパスで解決）
+    const workerPath = window.siteConfig.getWorkerPath('assets/search-worker.js');
+    let searchWorker;
+    
+    try {
+        searchWorker = new Worker(workerPath);
+        console.log('Worker successfully initialized with path:', workerPath);
+    } catch (error) {
+        console.error('Failed to initialize Worker:', error);
+        console.log('Attempted Worker path:', workerPath);
+        return; // Worker初期化失敗時は処理を中断
+    }
 
     // 商品データの初期化（シリアライズ可能なデータのみ）
-    console.log('Worker initialized with path:', workerPath); // デバッグ用
     const products = Array.from(productCards).map(card => ({
         id: card.getAttribute('data-id') || Array.from(productCards).indexOf(card).toString(),
         name: card.getAttribute('data-name'),

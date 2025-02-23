@@ -12,7 +12,17 @@ const config = {
 
     // アセットのパスを取得
     getAssetPath(path) {
-        return `${this.getBasePath()}/${path}`;
+        const basePath = this.getBasePath();
+        // パスの重複を防ぐために先頭のスラッシュを削除
+        const cleanPath = path.replace(/^\//, '');
+        return basePath ? `${basePath}/${cleanPath}` : cleanPath;
+    },
+
+    // Web Worker用のフルパスを取得
+    getWorkerPath(path) {
+        const fullPath = this.getAssetPath(path);
+        // 絶対URLに変換（Worker用）
+        return `${window.location.origin}${fullPath.startsWith('/') ? '' : '/'}${fullPath}`;
     }
 };
 
