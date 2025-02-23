@@ -3,14 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="使い心地の良い調理器具や、温かみのある食器類を取り揃えています。">
+    <meta http-equiv="Cache-Control" content="max-age=31536000">
     <title>キッチン用品 - Suzuki Zakka Store</title>
-    <link rel="stylesheet" href="assets/styles.css">
-    <link rel="stylesheet" href="assets/kitchen-styles.css">
+    
+    <!-- リソースの事前接続設定 -->
+    <link rel="dns-prefetch" href="//res.cloudinary.com">
+    <link rel="preconnect" href="//res.cloudinary.com" crossorigin>
+
+    <!-- メインスクリプトの事前読み込み -->
+    <link rel="preload" href="assets/menu.js" as="script">
+    <link rel="preload" href="assets/kitchen-search.js" as="script">
+    
+    <!-- クリティカルCSS -->
+    <style>
+        /* 初期表示に必要な最小限のスタイル */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        .sub-hero {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .sub-hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .sub-hero p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+
+    <!-- 非同期CSS読み込み -->
+    <link rel="preload" href="assets/styles.css" as="style">
+    <link rel="preload" href="assets/kitchen-styles.css" as="style">
+    <link rel="stylesheet" href="assets/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/kitchen-styles.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="assets/styles.css">
+        <link rel="stylesheet" href="assets/kitchen-styles.css">
+    </noscript>
     <script src="assets/config.js"></script>
 </head>
 <body>
     <header>
-        <nav>
+        <div class="site-logo">
+            <a href="index.html">Suzuki Zakka Store</a>
+        </div>
+        <!-- ハンバーガーメニューボタン -->
+        <button class="menu-toggle" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- PC用ナビゲーション -->
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="index.html">ホーム</a></li>
                 <li class="dropdown">
@@ -18,13 +88,43 @@
                     <ul class="dropdown-menu">
                         <li><a href="kitchen.html">キッチン用品</a></li>
                         <li><a href="interior.html">インテリア雑貨</a></li>
-                        <li><a href="notImplemented.html">ステーショナリー</a></li>
+                        <li><a href="notImplemented.html">食品</a></li>
+                        <li><a href="notImplemented.html">飲料</a></li>
+                        <li><a href="notImplemented.html">生鮮食品</a></li>
+                        <li><a href="notImplemented.html">デリカ・惣菜</a></li>
+                        <li><a href="notImplemented.html">日用品</a></li>
+                        <li><a href="notImplemented.html">コスメ・衣料品</a></li>
                     </ul>
                 </li>
                 <li><a href="index.html#access">アクセス</a></li>
                 <li><a href="index.html#contact">お問い合わせ</a></li>
             </ul>
         </nav>
+        <!-- モバイル用スライドメニュー -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li class="mobile-dropdown">
+                        <a href="#" class="mobile-dropdown-toggle">商品一覧</a>
+                        <ul class="mobile-dropdown-menu">
+                            <li><a href="kitchen.html">キッチン用品</a></li>
+                            <li><a href="interior.html">インテリア雑貨</a></li>
+                            <li><a href="notImplemented.html">食品</a></li>
+                            <li><a href="notImplemented.html">飲料</a></li>
+                            <li><a href="notImplemented.html">生鮮食品</a></li>
+                            <li><a href="notImplemented.html">デリカ・惣菜</a></li>
+                            <li><a href="notImplemented.html">日用品</a></li>
+                            <li><a href="notImplemented.html">コスメ・衣料品</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#access">アクセス</a></li>
+                    <li><a href="index.html#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- オーバーレイ背景 -->
+        <div class="menu-overlay"></div>
     </header>
 
     <main>
@@ -109,5 +209,6 @@
 
     <script src="assets/kitchen-search.js"></script>
     <script type="module" src="assets/images.js"></script>
+    <script src="assets/menu.js"></script>
 </body>
 </html>

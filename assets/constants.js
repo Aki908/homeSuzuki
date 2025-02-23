@@ -3,14 +3,44 @@ export const CLOUDINARY_BASE_URL = 'https://res.cloudinary.com/dgldatt9k';
 export const CLOUDINARY_PARAMS = {
     format: 'f_auto',
     quality: 'q_auto',
-    version: 'v1740269876'
+    loading: 'lazy',
+    sizes: {
+        mobile: 'w_400',
+        desktop: 'w_800'
+    },
+    optimization: {
+        compression: 'q_auto:best',
+        format: 'f_auto',
+        fetchFormat: 'auto'
+    }
 };
 
 // Image URLs
-export function getCloudinaryUrl(imagePath, width) {
-    const { format, quality, version } = CLOUDINARY_PARAMS;
-    const widthParam = width ? `w_${width},` : '';
-    return `${CLOUDINARY_BASE_URL}/image/upload/${widthParam}${format},${quality}/${version}/${imagePath}`;
+export function getCloudinaryUrl(imagePath, options = {}) {
+    const { optimization, sizes } = CLOUDINARY_PARAMS;
+    const { width, isResponsive = true } = options;
+
+    // 最適化パラメータの構築
+    const params = [
+        optimization.compression,
+        optimization.format,
+        width ? `w_${width}` : ''
+    ].filter(Boolean).join(',');
+
+    // レスポンシブ画像用のsrcset生成
+    if (isResponsive) {
+        return {
+            src: `${CLOUDINARY_BASE_URL}/image/upload/${params}/${imagePath}`,
+            srcset: `
+                ${CLOUDINARY_BASE_URL}/image/upload/${sizes.mobile},${optimization.compression}/${imagePath} 400w,
+                ${CLOUDINARY_BASE_URL}/image/upload/${sizes.desktop},${optimization.compression}/${imagePath} 800w
+            `.trim(),
+            sizes: '(max-width: 768px) 400px, 800px'
+        };
+    }
+
+    // 通常の画像URL生成
+    return `${CLOUDINARY_BASE_URL}/image/upload/${params}/${imagePath}`;
 }
 
 // Product images
