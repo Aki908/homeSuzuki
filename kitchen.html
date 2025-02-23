@@ -13,7 +13,7 @@
 
     <!-- メインスクリプトの事前読み込み -->
     <link rel="preload" href="assets/menu.js" as="script">
-    <link rel="preload" href="assets/kitchen-search.js" as="script">
+    <link rel="preload" href="assets/search.js" as="script">
     
     <!-- クリティカルCSS -->
     <style>
@@ -87,36 +87,27 @@
                     <a href="#" class="dropdown-toggle">商品一覧</a>
                     <ul class="dropdown-menu">
                         <li class="menu-group">
-                            <span class="group-title">キッチン</span>
+                            <span class="group-title">キッチン・インテリア</span>
                             <ul>
                                 <li><a href="kitchen.html">キッチン用品</a></li>
-                                <li><a href="interior.html">インテリア雑貨</a></li>
+                                <li><a href="notImplemented.html">インテリア用品</a></li>
                             </ul>
                         </li>
                         <li class="menu-group">
                             <span class="group-title">食品・飲料</span>
                             <ul>
-                                <li><a href="notImplemented.html">食品</a></li>
-                                <li><a href="notImplemented.html">調味料</a></li>
                                 <li><a href="notImplemented.html">生鮮食品</a></li>
-                                <li><a href="notImplemented.html">パン</a></li>
-                                <li><a href="notImplemented.html">麺類</a></li>
-                                <li><a href="notImplemented.html">スープ</a></li>
-                                <li><a href="notImplemented.html">オイル</a></li>
-                                <li><a href="notImplemented.html">チーズ</a></li>
-                                <li><a href="notImplemented.html">パスタ</a></li>
+                                <li><a href="notImplemented.html">食品・調味料</a></li>
+                                <li><a href="notImplemented.html">パン・麺類</a></li>
                                 <li><a href="notImplemented.html">デリカ・惣菜</a></li>
-                                <li><a href="notImplemented.html">冷凍食品</a></li>
-                                <li><a href="notImplemented.html">インスタント食品</a></li>
                                 <li><a href="notImplemented.html">スイーツ・お菓子</a></li>
-                                <li><a href="notImplemented.html">ジャム・スプレッド</a></li>
-                                <li><a href="notImplemented.html">飲料</a></li>
+                                <li><a href="notImplemented.html">ドリンク</a></li>
                             </ul>
                         </li>
                         <li class="menu-group">
                             <span class="group-title">生活用品</span>
                             <ul>
-                                <li><a href="notImplemented.html">日用品</a></li>
+                                <li><a href="daily-necessities.html">日用品</a></li>
                                 <li><a href="notImplemented.html">ベビー用品</a></li>
                                 <li><a href="notImplemented.html">衣料品</a></li>
                                 <li><a href="notImplemented.html">季節商品</a></li>
@@ -144,36 +135,27 @@
                         <a href="#" class="mobile-dropdown-toggle">商品一覧</a>
                         <ul class="mobile-dropdown-menu">
                             <li class="mobile-menu-group">
-                                <span class="mobile-group-title">キッチン</span>
+                                <span class="mobile-group-title">キッチン・インテリア</span>
                                 <ul>
                                     <li><a href="kitchen.html">キッチン用品</a></li>
-                                    <li><a href="interior.html">インテリア雑貨</a></li>
+                                    <li><a href="notImplemented.html">インテリア用品</a></li>
                                 </ul>
                             </li>
                             <li class="mobile-menu-group">
                                 <span class="mobile-group-title">食品・飲料</span>
                                 <ul>
-                                    <li><a href="notImplemented.html">食品</a></li>
-                                    <li><a href="notImplemented.html">調味料</a></li>
                                     <li><a href="notImplemented.html">生鮮食品</a></li>
-                                    <li><a href="notImplemented.html">パン</a></li>
-                                    <li><a href="notImplemented.html">麺類</a></li>
-                                    <li><a href="notImplemented.html">スープ</a></li>
-                                    <li><a href="notImplemented.html">オイル</a></li>
-                                    <li><a href="notImplemented.html">チーズ</a></li>
-                                    <li><a href="notImplemented.html">パスタ</a></li>
+                                    <li><a href="notImplemented.html">食品・調味料</a></li>
+                                    <li><a href="notImplemented.html">パン・麺類</a></li>
                                     <li><a href="notImplemented.html">デリカ・惣菜</a></li>
-                                    <li><a href="notImplemented.html">冷凍食品</a></li>
-                                    <li><a href="notImplemented.html">インスタント食品</a></li>
                                     <li><a href="notImplemented.html">スイーツ・お菓子</a></li>
-                                    <li><a href="notImplemented.html">ジャム・スプレッド</a></li>
-                                    <li><a href="notImplemented.html">飲料</a></li>
+                                    <li><a href="notImplemented.html">ドリンク</a></li>
                                 </ul>
                             </li>
                             <li class="mobile-menu-group">
                                 <span class="mobile-group-title">生活用品</span>
                                 <ul>
-                                    <li><a href="notImplemented.html">日用品</a></li>
+                                    <li><a href="daily-necessities.html">日用品</a></li>
                                     <li><a href="notImplemented.html">ベビー用品</a></li>
                                     <li><a href="notImplemented.html">衣料品</a></li>
                                     <li><a href="notImplemented.html">季節商品</a></li>
@@ -210,61 +192,111 @@
 
             <div class="products-grid" id="productsGrid">
                 <div class="product-card" data-id="k1" data-name="木製カッティングボード" data-category="調理器具">
-                    <img src="https://cdn.pixabay.com/photo/2019/09/01/11/51/foods-4445048_1280.png" alt="木製カッティングボード">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
+                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
+                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
+                         sizes="(max-width: 768px) 400px, 800px"
+                         loading="lazy"
+                         alt="木製カッティングボード">
                     <h3>木製カッティングボード</h3>
                     <p>天然木を使用した、使い心地の良いカッティングボード</p>
                     <span class="price">¥3,800</span>
                 </div>
                 <div class="product-card" data-id="k2" data-name="陶器マグカップ" data-category="食器">
-                    <img src="https://cdn.pixabay.com/photo/2019/09/01/11/51/foods-4445048_1280.png" alt="陶器マグカップ">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
+                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
+                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
+                         sizes="(max-width: 768px) 400px, 800px"
+                         loading="lazy"
+                         alt="陶器マグカップ">
                     <h3>陶器マグカップ</h3>
                     <p>手作りの温もりが感じられる、日常使いの マグカップ</p>
                     <span class="price">¥2,200</span>
                 </div>
                 <div class="product-card" data-id="k3" data-name="ステンレスボウル" data-category="調理器具">
-                    <img src="https://cdn.pixabay.com/photo/2019/09/01/11/51/foods-4445048_1280.png" alt="ステンレスボウル">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
+                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
+                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
+                         sizes="(max-width: 768px) 400px, 800px"
+                         loading="lazy"
+                         alt="ステンレスボウル">
                     <h3>ステンレスボウル</h3>
                     <p>使いやすさを追求した、多目的ボウル</p>
                     <span class="price">¥1,800</span>
                 </div>
                 <div class="product-card" data-id="k4" data-name="キッチンタイマー" data-category="調理器具">
-                    <img src="https://cdn.pixabay.com/photo/2019/09/01/11/51/foods-4445048_1280.png" alt="キッチンタイマー">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
+                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
+                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
+                         sizes="(max-width: 768px) 400px, 800px"
+                         loading="lazy"
+                         alt="キッチンタイマー">
                     <h3>キッチンタイマー</h3>
                     <p>シンプルで使いやすい、アナログタイマー</p>
                     <span class="price">¥1,500</span>
                 </div>
                 <div class="product-card" data-id="k5" data-name="箸置きセット" data-category="食器">
-                    <img src="https://cdn.pixabay.com/photo/2019/09/01/11/51/foods-4445048_1280.png" alt="箸置きセット">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
+                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
+                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
+                         sizes="(max-width: 768px) 400px, 800px"
+                         loading="lazy"
+                         alt="箸置きセット">
                     <h3>箸置きセット</h3>
                     <p>季節を感じる、陶器の箸置き5個セット</p>
                     <span class="price">¥2,500</span>
                 </div>
                 <div class="product-card" data-id="k6" data-name="キッチンスケール" data-category="調理器具">
-                    <img src="https://cdn.pixabay.com/photo/2019/09/01/11/51/foods-4445048_1280.png" alt="キッチンスケール">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
+                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
+                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
+                         sizes="(max-width: 768px) 400px, 800px"
+                         loading="lazy"
+                         alt="キッチンスケール">
                     <h3>キッチンスケール</h3>
                     <p>デジタル表示で正確な計量が可能</p>
                     <span class="price">¥3,200</span>
                 </div>
                 <div class="product-card" data-id="k7" data-name="茶碗セット" data-category="食器">
-                    <img src="https://cdn.pixabay.com/photo/2019/09/01/11/51/foods-4445048_1280.png" alt="茶碗セット">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
+                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
+                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
+                         sizes="(max-width: 768px) 400px, 800px"
+                         loading="lazy"
+                         alt="茶碗セット">
                     <h3>茶碗セット</h3>
                     <p>日本の伝統が感じられる、上質な茶碗4個セット</p>
                     <span class="price">¥6,800</span>
                 </div>
                 <div class="product-card" data-id="k8" data-name="シリコンスパチュラ" data-category="調理器具">
-                    <img src="https://cdn.pixabay.com/photo/2019/09/01/11/51/foods-4445048_1280.png" alt="シリコンスパチュラ">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
+                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
+                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
+                         sizes="(max-width: 768px) 400px, 800px"
+                         loading="lazy"
+                         alt="シリコンスパチュラ">
                     <h3>シリコンスパチュラ</h3>
                     <p>耐熱性に優れた、お手入れ簡単なスパチュラ</p>
                     <span class="price">¥1,200</span>
                 </div>
                 <div class="product-card" data-id="k9" data-name="ティーポット" data-category="食器">
-                    <img src="https://cdn.pixabay.com/photo/2019/09/01/11/51/foods-4445048_1280.png" alt="ティーポット">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
+                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
+                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
+                         sizes="(max-width: 768px) 400px, 800px"
+                         loading="lazy"
+                         alt="ティーポット">
                     <h3>ティーポット</h3>
                     <p>美しい注ぎ口が特徴の、陶器のティーポット</p>
                     <span class="price">¥4,500</span>
                 </div>
                 <div class="product-card" data-id="k10" data-name="包丁スタンド" data-category="調理器具">
-                    <img src="https://cdn.pixabay.com/photo/2019/09/01/11/51/foods-4445048_1280.png" alt="包丁スタンド">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
+                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
+                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
+                         sizes="(max-width: 768px) 400px, 800px"
+                         loading="lazy"
+                         alt="包丁スタンド">
                     <h3>包丁スタンド</h3>
                     <p>竹製の安定感のある包丁スタンド</p>
                     <span class="price">¥2,800</span>
@@ -277,8 +309,7 @@
         <p>&copy; 2025 Suzuki Zakka Store. All rights reserved.</p>
     </footer>
 
-    <script src="assets/kitchen-search.js"></script>
-    <script type="module" src="assets/images.js"></script>
+    <script src="assets/search.js"></script>
     <script src="assets/menu.js"></script>
 </body>
 </html>

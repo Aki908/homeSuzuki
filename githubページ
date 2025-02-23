@@ -16,7 +16,7 @@
                     <a href="#" class="dropdown-toggle">商品一覧</a>
                     <ul class="dropdown-menu">
                         <li><a href="kitchen.html">キッチン用品</a></li>
-                        <li><a href="interior.html">インテリア雑貨</a></li>
+                        <li><a href="daily-necessities.html">日用品</a></li>
                         <li><a href="stationery.html">ステーショナリー</a></li>
                     </ul>
                 </li>
@@ -50,8 +50,8 @@
                     </a>
                 </div>
                 <div class="category">
-                    <a href="interior.html" class="category-link">
-                        <h3>インテリア雑貨</h3>
+                    <a href="daily-necessities.html" class="category-link">
+                        <h3>日用品</h3>
                         <p>お部屋を彩る小物から、実用的な収納グッズまで。</p>
                     </a>
                 </div>
