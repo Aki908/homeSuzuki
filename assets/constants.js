@@ -45,14 +45,14 @@ export function getCloudinaryUrl(imagePath, options = {}) {
 
 // Product images
 export const PRODUCT_IMAGES = {
-    interior: 'interior_hfcy8v.webp',
+    daily-necessities: 'interior_hfcy8v.webp',
     kitchen: 'foods_vwrriz.webp',
     lineButton: 'ja_tyt1gl.png'
 };
 
 // Image versions
 export const IMAGE_VERSIONS = {
-    interior: 'v1740269876',
+    daily-necessities: 'v1740269876',
     kitchen: 'v1740269875',
     lineButton: 'v1740271253'
 };

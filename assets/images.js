@@ -3,7 +3,7 @@ import { getCloudinaryUrl, getImageConfig, CLOUDINARY_BASE_URL } from './constan
 document.addEventListener('DOMContentLoaded', function() {
     // ページタイプを判定（URLから）
     const isKitchenPage = window.location.pathname.includes('kitchen');
-    const imageType = isKitchenPage ? 'kitchen' : 'interior';
+    const imageType = isKitchenPage ? 'kitchen' : 'daily-necessities';
     const config = getImageConfig(imageType);
 
     // 商品カードの画像を更新
