@@ -10,13 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const productCards = document.querySelectorAll('.product-card img');
     productCards.forEach(img => {
         const urlBase = `${CLOUDINARY_BASE_URL}/image/upload`;
-        const srcset = [
-            `${urlBase}/w_400,f_auto,q_auto/${config.version}/${config.path} 400w`,
-            `${urlBase}/w_800,f_auto,q_auto/${config.version}/${config.path} 800w`
-        ].join(', ');
+        const imageResult = getCloudinaryUrl(`${config.version}/${config.path}`, {
+            isResponsive: true
+        });
 
-        img.setAttribute('src', `${urlBase}/f_auto,q_auto/${config.version}/${config.path}`);
-        img.setAttribute('srcset', srcset);
+        img.setAttribute('src', imageResult.src);
+        img.setAttribute('srcset', imageResult.srcset);
         img.setAttribute('sizes', '(max-width: 768px) 400px, 800px');
         img.setAttribute('loading', 'lazy');
     });
