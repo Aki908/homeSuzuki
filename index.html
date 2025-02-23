@@ -12,8 +12,41 @@
     <link rel="preconnect" href="//res.cloudinary.com" crossorigin>
     
     <!-- 主要なアセットの事前読み込み -->
+    <!-- クリティカルCSS -->
+    <style>
+        /* 初期表示に必要な最小限のスタイル */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .hero-content {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 3rem 4rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+        #hero h1 {
+            font-size: 4.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        #hero p {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    </style>
+
+    <!-- 非同期CSS読み込み -->
     <link rel="preload" href="assets/styles.css" as="style">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="assets/styles.css">
+    </noscript>
     <script src="assets/config.js"></script>
 </head>
 <body>
