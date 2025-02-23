@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const productsGrid = document.getElementById('productsGrid');
     const productCards = document.querySelectorAll('.product-card');
 
-    // Web Workerの初期化
-    const searchWorker = new Worker('/assets/search-worker.js');
+    // Web Workerの初期化（パスを環境に応じて解決）
+    const workerPath = window.siteConfig.getAssetPath('assets/search-worker.js');
+    const searchWorker = new Worker(workerPath);
 
     // 商品データの初期化（シリアライズ可能なデータのみ）
+    console.log('Worker initialized with path:', workerPath); // デバッグ用
     const products = Array.from(productCards).map(card => ({
         id: card.getAttribute('data-id') || Array.from(productCards).indexOf(card).toString(),
         name: card.getAttribute('data-name'),
