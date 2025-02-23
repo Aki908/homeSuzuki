@@ -19,6 +19,14 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    padding-top: 60px;  /* ヘッダーの高さ分だけコンテンツを下げる */
 }
 
 /* ハンバーガーメニューボタン */
@@ -316,7 +324,7 @@ nav a:hover {
 
 /* Main content */
 main {
-    margin-top: 0;
+    padding-top: 60px;  /* ヘッダーの高さ分のパディングのみ設定 */
 }
 
 section {
@@ -324,7 +332,6 @@ section {
 }
 
 #hero {
-    margin-top: 60px;
     background-image: url('images/logo.webp');
     background-size: cover;
     background-position: center;
@@ -514,14 +521,28 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    /* ヘッダーとナビゲーションのモバイル調整 */
+    header {
+        height: 60px;
+        padding: 0 1rem;
+        justify-content: flex-end;
+    }
+
     .desktop-nav {
         display: none;
     }
 
     .menu-toggle {
         display: block;
+        position: fixed;
+        right: 1rem;
     }
 
+    .mobile-nav {
+        padding: 1rem;
+    }
+
+    /* モバイルドロップダウンの調整 */
     .mobile-dropdown-toggle::after {
         content: '▼';
         margin-left: 0.5rem;
@@ -533,16 +554,13 @@ footer {
         transform: rotate(180deg);
     }
 
-    .mobile-nav {
-        margin-top: 1rem;
-    }
-
     .mobile-dropdown-menu {
         margin: 0.5rem 0;
         background: #f8f9fa;
         border-radius: 4px;
     }
 
+    /* コンテンツ部分の調整 */
     h1 {
         font-size: 2rem;
     }
@@ -552,12 +570,10 @@ footer {
     }
 
     section {
-        padding: 3rem 1rem;
+        padding: 1.5rem 1rem;
     }
 
-    #hero {
-        margin-top: 50px;
-    }
+    /* #heroのマージン削除（padding-topがmainに設定されているため） */
 }
 
 @media (min-width: 769px) {

@@ -1,9 +1,8 @@
 /* Kitchen page specific styles */
 .sub-hero {
-    margin-top: 60px;
     background-color: #f8f9fa;
     text-align: center;
-    padding: 6rem 2rem;
+    padding: 2rem;
 }
 
 
@@ -97,10 +96,9 @@
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
     .sub-hero {
-        margin-top: 180px;
-        padding: 3rem 1.5rem;
+        padding: 1.5rem;
     }
 
     .sub-hero h1 {
