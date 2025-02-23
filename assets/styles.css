@@ -116,11 +116,24 @@ nav a:hover {
         background: transparent;
         min-width: auto;
         padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .dropdown-menu a {
-        padding: 0.5rem 0;
+        padding: 0.7rem 0;
         text-align: center;
+        width: 100%;
+        max-width: 200px;
+        margin: 0.2rem auto;
+        border-radius: 4px;
+        background-color: #f8f9fa;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #e9ecef;
     }
 
     .dropdown-toggle::after {
