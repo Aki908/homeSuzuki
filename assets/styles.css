@@ -43,6 +43,93 @@ nav a:hover {
     color: #666;
 }
 
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    padding-right: 1.5rem;
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    font-size: 0.8em;
+    margin-left: 0.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    min-width: 200px;
+    padding: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.7rem 1.5rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: transparent;
+        min-width: auto;
+        padding: 0;
+    }
+
+    .dropdown-menu a {
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+
+    .dropdown-toggle::after {
+        position: static;
+        margin-left: 0.5rem;
+        transform: none;
+    }
+}
+
 /* Main content */
 main {
     margin-top: 0;
@@ -146,6 +233,22 @@ h3 {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.category-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.category-link:hover {
+    color: inherit;
 }
 
 /* Concept section */
@@ -164,6 +267,57 @@ h3 {
 
 .store-info p, .contact-info p {
     margin-bottom: 0.5rem;
+}
+
+.contact-form {
+    margin: 3rem auto 2rem;
+    text-align: center;
+}
+
+.line-button {
+    text-align: center;
+    margin: 0 auto 3rem;
+}
+
+.line-add-friend {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.line-add-friend:hover {
+    opacity: 0.8;
+}
+
+.line-add-friend img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .line-add-friend img {
+        max-width: 240px;
+    }
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button:hover {
+    color: #fff;
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */

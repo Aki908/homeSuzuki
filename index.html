@@ -11,7 +11,14 @@
         <nav>
             <ul>
                 <li><a href="#concept">コンセプト</a></li>
-                <li><a href="#products">取扱商品</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">商品一覧</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="kitchen.html">キッチン用品</a></li>
+                        <li><a href="interior.html">インテリア雑貨</a></li>
+                        <li><a href="stationery.html">ステーショナリー</a></li>
+                    </ul>
+                </li>
                 <li><a href="#access">アクセス</a></li>
                 <li><a href="#contact">お問い合わせ</a></li>
             </ul>
@@ -36,12 +43,16 @@
             <h2>取扱商品</h2>
             <div class="product-categories">
                 <div class="category">
-                    <h3>キッチン用品</h3>
-                    <p>使い心地の良い調理器具や、温かみのある食器類を取り揃えています。</p>
+                    <a href="kitchen.html" class="category-link">
+                        <h3>キッチン用品</h3>
+                        <p>使い心地の良い調理器具や、温かみのある食器類を取り揃えています。</p>
+                    </a>
                 </div>
                 <div class="category">
-                    <h3>インテリア雑貨</h3>
-                    <p>お部屋を彩る小物から、実用的な収納グッズまで。</p>
+                    <a href="interior.html" class="category-link">
+                        <h3>インテリア雑貨</h3>
+                        <p>お部屋を彩る小物から、実用的な収納グッズまで。</p>
+                    </a>
                 </div>
                 <div class="category">
                     <h3>ステーショナリー</h3>
@@ -66,6 +77,16 @@
                 <p>Suzuki Zakka Store</p>
                 <p>TEL: 03-1234-5678</p>
                 <p>お気軽にお問い合わせください。</p>
+            </div>
+            <div class="contact-form">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIX2dYDyqsU9zFlnxhSPmPmN_J691WY5SXvhq0MtRQwfvEvQ/viewform" target="_blank" class="contact-button">お問い合わせフォームを開く</a>
+            </div>
+            <div class="line-button">
+                <a href="#" class="line-add-friend">
+                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/w_300,q_auto,f_auto/v1740271253/ja_tyt1gl.png" 
+                         alt="LINE公式アカウントを友だち追加" 
+                         loading="lazy">
+                </a>
             </div>
         </section>
     </main>
