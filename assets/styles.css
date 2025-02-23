@@ -270,8 +270,34 @@ h3 {
 }
 
 .contact-form {
-    margin: 3rem auto 0;
+    margin: 3rem auto 2rem;
     text-align: center;
+}
+
+.line-button {
+    text-align: center;
+    margin: 0 auto 3rem;
+}
+
+.line-add-friend {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.line-add-friend:hover {
+    opacity: 0.8;
+}
+
+.line-add-friend img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .line-add-friend img {
+        max-width: 240px;
+    }
 }
 
 .contact-button {

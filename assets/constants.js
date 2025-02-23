@@ -16,13 +16,15 @@ export function getCloudinaryUrl(imagePath, width) {
 // Product images
 export const PRODUCT_IMAGES = {
     interior: 'interior_hfcy8v.webp',
-    kitchen: 'foods_vwrriz.webp'
+    kitchen: 'foods_vwrriz.webp',
+    lineButton: 'ja_tyt1gl.png'
 };
 
 // Image versions
 export const IMAGE_VERSIONS = {
     interior: 'v1740269876',
-    kitchen: 'v1740269875'
+    kitchen: 'v1740269875',
+    lineButton: 'v1740271253'
 };
 
 // Get full image configuration
