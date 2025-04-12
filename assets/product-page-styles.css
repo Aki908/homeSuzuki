@@ -152,7 +152,7 @@
     }
 
     .product-card img {
-        height: 150px;
+        height: 200px; /* デスクトップと同じ高さに統一 */
     }
 
     .search-container {
