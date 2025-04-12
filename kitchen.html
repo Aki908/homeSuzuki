@@ -14,6 +14,7 @@
     <!-- メインスクリプトの事前読み込み -->
     <link rel="preload" href="assets/menu.js" as="script">
     <link rel="preload" href="assets/search.js" as="script">
+    <link rel="preload" href="assets/image-loader.js" as="script">
     
     <!-- クリティカルCSS -->
     <style>
@@ -66,6 +67,7 @@
         <link rel="stylesheet" href="assets/product-page-styles.css">
     </noscript>
     <script src="assets/config.js"></script>
+    <script src="assets/image-loader.js"></script>
 </head>
 <body>
     <header>
@@ -183,6 +185,7 @@
         <section id="kitchen-header" class="sub-hero">
             <h1>キッチン用品</h1>
             <p>毎日の食卓を彩る、こだわりのアイテム</p>
+            <p class="price-notice">価格についてはお問い合わせください</p>
         </section>
 
         <section id="products" class="products-section">
@@ -192,114 +195,74 @@
 
             <div class="products-grid" id="productsGrid">
                 <div class="product-card" data-id="k1" data-name="木製カッティングボード" data-category="調理器具">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="木製カッティングボード">
+                    <script>
+                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', '木製カッティングボード'));
+                    </script>
                     <h3>木製カッティングボード</h3>
                     <p>天然木を使用した、使い心地の良いカッティングボード</p>
-                    <span class="price">¥3,800</span>
                 </div>
                 <div class="product-card" data-id="k2" data-name="陶器マグカップ" data-category="食器">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="陶器マグカップ">
+                    <script>
+                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', '陶器マグカップ'));
+                    </script>
                     <h3>陶器マグカップ</h3>
                     <p>手作りの温もりが感じられる、日常使いの マグカップ</p>
-                    <span class="price">¥2,200</span>
                 </div>
                 <div class="product-card" data-id="k3" data-name="ステンレスボウル" data-category="調理器具">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="ステンレスボウル">
+                    <script>
+                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', 'ステンレスボウル'));
+                    </script>
                     <h3>ステンレスボウル</h3>
                     <p>使いやすさを追求した、多目的ボウル</p>
-                    <span class="price">¥1,800</span>
                 </div>
                 <div class="product-card" data-id="k4" data-name="キッチンタイマー" data-category="調理器具">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="キッチンタイマー">
+                    <script>
+                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', 'キッチンタイマー'));
+                    </script>
                     <h3>キッチンタイマー</h3>
                     <p>シンプルで使いやすい、アナログタイマー</p>
-                    <span class="price">¥1,500</span>
                 </div>
                 <div class="product-card" data-id="k5" data-name="箸置きセット" data-category="食器">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="箸置きセット">
+                    <script>
+                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', '箸置きセット'));
+                    </script>
                     <h3>箸置きセット</h3>
                     <p>季節を感じる、陶器の箸置き5個セット</p>
-                    <span class="price">¥2,500</span>
                 </div>
                 <div class="product-card" data-id="k6" data-name="キッチンスケール" data-category="調理器具">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="キッチンスケール">
+                    <script>
+                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', 'キッチンスケール'));
+                    </script>
                     <h3>キッチンスケール</h3>
                     <p>デジタル表示で正確な計量が可能</p>
-                    <span class="price">¥3,200</span>
                 </div>
                 <div class="product-card" data-id="k7" data-name="茶碗セット" data-category="食器">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="茶碗セット">
+                    <script>
+                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', '茶碗セット'));
+                    </script>
                     <h3>茶碗セット</h3>
                     <p>日本の伝統が感じられる、上質な茶碗4個セット</p>
-                    <span class="price">¥6,800</span>
                 </div>
                 <div class="product-card" data-id="k8" data-name="シリコンスパチュラ" data-category="調理器具">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="シリコンスパチュラ">
+                    <script>
+                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', 'シリコンスパチュラ'));
+                    </script>
                     <h3>シリコンスパチュラ</h3>
                     <p>耐熱性に優れた、お手入れ簡単なスパチュラ</p>
-                    <span class="price">¥1,200</span>
                 </div>
                 <div class="product-card" data-id="k9" data-name="ティーポット" data-category="食器">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="ティーポット">
+                    <script>
+                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', 'ティーポット'));
+                    </script>
                     <h3>ティーポット</h3>
                     <p>美しい注ぎ口が特徴の、陶器のティーポット</p>
-                    <span class="price">¥4,500</span>
                 </div>
                 <div class="product-card" data-id="k10" data-name="包丁スタンド" data-category="調理器具">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269875/foods_vwrriz.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269875/foods_vwrriz.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269875/foods_vwrriz.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="包丁スタンド">
+                    <script>
+                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', '包丁スタンド'));
+                    </script>
                     <h3>包丁スタンド</h3>
                     <p>竹製の安定感のある包丁スタンド</p>
-                    <span class="price">¥2,800</span>
                 </div>
             </div>
         </section>

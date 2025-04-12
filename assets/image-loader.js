@@ -1,6 +1,6 @@
 // Cloudinary image optimization settings
 const CLOUDINARY_CONFIG = {
-    baseUrl: 'https://res.cloudinary.com/dgldatt9k/image/upload',
+    baseUrl: 'https://res.cloudinary.com/dic2rdjzg/image/upload',
     defaultTransforms: {
         auto: 'f_auto,q_auto',
         responsive: {
