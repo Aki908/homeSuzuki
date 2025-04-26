@@ -40,6 +40,11 @@ class ImageLoader {
             .join('\n        ');
     }
 
+    static generateLargeImage(imageId) {
+        const auto = CLOUDINARY_CONFIG.defaultTransforms.auto;
+        return `${CLOUDINARY_CONFIG.baseUrl}/c_fill,w_1600,${auto}/${imageId}`;
+    }
+
     static createProductImage(imageId, altText) {
         return `<img ${this.generateResponsiveImage(imageId, { alt: altText })}>`
     }
