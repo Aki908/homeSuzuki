@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="お客様の日常を彩る、厳選された商品を取り揃えています。">
+    <meta name="description" content="手作りの美味しさにこだわった、素材を活かしたお菓子を取り揃えています。">
     <meta http-equiv="Cache-Control" content="max-age=31536000">
-    <title>商品一覧 - Suzuki Zakka Store</title>
+    <title>スイーツ・お菓子 - Suzuki Zakka Store</title>
     
     <!-- リソースの事前接続設定 -->
     <link rel="dns-prefetch" href="//res.cloudinary.com">
@@ -72,10 +72,6 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
         }
         .products-grid {
             display: grid;
@@ -98,6 +94,11 @@
     <script src="assets/image-loader.js"></script>
 </head>
 <body>
+    <!-- モーダル -->
+    <div id="imageModal" class="modal">
+        <div id="modalContent"></div>
+    </div>
+
     <header>
         <div class="site-logo">
             <a href="index.html">Suzuki Zakka Store</a>
@@ -178,7 +179,7 @@
                                     <li><a href="foods.html">食品・調味料</a></li>
                                     <li><a href="bread-and-noodles.html">パン・麺類</a></li>
                                     <li><a href="notImplemented.html">デリカ・惣菜</a></li>
-                                    <li><a href="notImplemented.html">スイーツ・お菓子</a></li>
+                                    <li><a href="sweets.html">スイーツ・お菓子</a></li>
                                     <li><a href="notImplemented.html">ドリンク</a></li>
                                 </ul>
                             </li>
@@ -210,10 +211,10 @@
     </header>
 
     <main>
-        <section class="sub-hero">
-            <h1>食品・調味料</h1>
-            <p>厳選された食材で、豊かな食卓を</p>
-            <p class="price-notice">価格についてはお問い合わせください</p>
+        <section id="sweets-header" class="sub-hero">
+            <h1>スイーツ・お菓子</h1>
+            <p>素材の味を活かした、心温まるお菓子たち</p>
+            <p class="price-notice">価格は店頭でご確認ください</p>
         </section>
 
         <section id="products" class="products-section">
@@ -221,139 +222,22 @@
                 <input type="text" id="searchInput" placeholder="商品を検索..." class="search-input">
             </div>
 
-            <!-- モーダル -->
-            <div id="imageModal" class="modal">
-                <div id="modalContent"></div>
-            </div>
-
             <div class="products-grid" id="productsGrid">
-                <div class="product-card" data-id="p1" data-name="特製カレー（辛口）" data-category="調味料">
-                    <script>
-                        (function() {
-                            const imageId = 'v1744422646/1000014969_rx5qrc.jpg';
-                            const altText = '有特製カレー（辛口）';
-                            document.write(`
+                <script>
+                    (function() {
+                        const imageId = 'v1745704840/1745699000912_kfgg4t.jpg';
+                        const altText = '塩飴';
+                        document.write(`
+                            <div class="product-card" data-id="s1" data-name="${altText}" data-category="お菓子">
                                 <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
                                     ${ImageLoader.createProductImage(imageId, altText)}
                                 </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>特製カレー（辛口）</h3>
-                    <p>食堂定番メニューの辛口カレー</p>
-                </div>
-
-                <div class="product-card" data-id="p2" data-name="特製カレー（中辛）" data-category="調味料">
-                    <script>
-                        (function() {
-                            const imageId = 'v1744422646/1000014965_tyzd2u.jpg';
-                            const altText = '特製カレー（中辛）';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>特製カレー（中辛）</h3>
-                    <p>程よい辛さで食べやすい、定番人気のカレー</p>
-                </div>
-
-                <div class="product-card" data-id="p3" data-name="特製カレー（甘口）" data-category="調味料">
-                    <script>
-                        (function() {
-                            const imageId = 'v1744422646/1000014966_relpfp.jpg';
-                            const altText = '特製カレー（甘口）';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>特製カレー（甘口）</h3>
-                    <p>お子様でも食べやすい、優しい味わいのカレー</p>
-                </div>
-
-                <div class="product-card" data-id="p5" data-name="玉露入り八女茶" data-category="調味料">
-                    <script>
-                        (function() {
-                            const imageId = 'v1744422646/1000014964_yvdff3.jpg';
-                            const altText = '玉露入り八女茶';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>玉露入り八女茶</h3>
-                    <p>上質な玉露が入った、香り高い福岡県産のお茶</p>
-                </div>
-
-                <div class="product-card" data-id="p6" data-name="調味料セット" data-category="調味料">
-                    <script>
-                        (function() {
-                            const imageId = 'v1745704840/1745699000729_no6wva.jpg';
-                            const altText = '調味料セット';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>畑のお肉のカレーそぼろ</h3>
-                    <p>大豆ミートで本物のお肉のような触感がクセになる</p>
-                </div>
-
-                <div class="product-card" data-id="p7" data-name="オイスターソース" data-category="調味料">
-                    <script>
-                        (function() {
-                            const imageId = 'v1745704839/1745699001049_j8wyqa.jpg';
-                            const altText = 'オイスターソース';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>贅沢アワビ オイスターソース</h3>
-                    <p>芳醇なアワビの自然なうまさが凝縮されたソース</p>
-                </div>
-
-                <div class="product-card" data-id="p8" data-name="鯖フレーク" data-category="調味料">
-                    <script>
-                        (function() {
-                            const imageId = 'v1745704840/1745699000456_ifglxl.jpg';
-                            const altText = '鯖フレーク';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>さばフレーク</h3>
-                    <p>ふりかけ、おにぎりの具、お茶漬け、お手軽に使用できる一品</p>
-                </div>
-
-                <div class="product-card" data-id="p9" data-name="コーンポタージュ" data-category="食品">
-                    <script>
-                        (function() {
-                            const imageId = 'v1745704840/1745699000848_avjhne.jpg';
-                            const altText = 'コーンポタージュ';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>コーンポタージュ</h3>
-                    <p>とうもろこしの甘みが引き立つ濃厚スープ</p>
-                </div>
+                                <h3>伝統のしお飴</h3>
+                                <p>熱中症対策に最適な、昔ながらの塩飴</p>
+                            </div>
+                        `);
+                    })();
+                </script>
             </div>
         </section>
     </main>

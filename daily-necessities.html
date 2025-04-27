@@ -14,9 +14,34 @@
     <!-- メインスクリプトの事前読み込み -->
     <link rel="preload" href="assets/menu.js" as="script">
     <link rel="preload" href="assets/search.js" as="script">
+    <link rel="preload" href="assets/image-loader.js" as="script">
     
     <!-- クリティカルCSS -->
     <style>
+        /* モーダル関連のスタイル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .product-card img {
+            cursor: pointer;
+        }
         /* 初期表示に必要な最小限のスタイル */
         header {
             background: #fff;
@@ -47,7 +72,6 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
         }
         .products-grid {
             display: grid;
@@ -55,31 +79,19 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-        .search-container {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        @media (max-width: 768px) {
-            header {
-                height: 60px;
-            }
-            .sub-hero {
-                padding: 1.5rem;
-            }
-        }
     </style>
 
     <!-- 非同期CSS読み込み -->
     <link rel="preload" href="assets/styles.css" as="style">
-    <link rel="preload" href="assets/kitchen-styles.css" as="style">
+    <link rel="preload" href="assets/product-page-styles.css" as="style">
     <link rel="stylesheet" href="assets/styles.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="assets/kitchen-styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/product-page-styles.css" media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="assets/styles.css">
-        <link rel="stylesheet" href="assets/kitchen-styles.css">
+        <link rel="stylesheet" href="assets/product-page-styles.css">
     </noscript>
     <script src="assets/config.js"></script>
+    <script src="assets/image-loader.js"></script>
 </head>
 <body>
     <header>
@@ -112,9 +124,9 @@
                             <ul>
                                 <li><a href="notImplemented.html">生鮮食品</a></li>
                                 <li><a href="foods.html">食品・調味料</a></li>
-                                <li><a href="notImplemented.html">パン・麺類</a></li>
+                                <li><a href="bread-and-noodles.html">パン・麺類</a></li>
                                 <li><a href="notImplemented.html">デリカ・惣菜</a></li>
-                                <li><a href="notImplemented.html">スイーツ・お菓子</a></li>
+                                <li><a href="sweets.html">スイーツ・お菓子</a></li>
                                 <li><a href="notImplemented.html">ドリンク</a></li>
                             </ul>
                         </li>
@@ -160,9 +172,9 @@
                                 <ul>
                                     <li><a href="notImplemented.html">生鮮食品</a></li>
                                     <li><a href="foods.html">食品・調味料</a></li>
-                                    <li><a href="notImplemented.html">パン・麺類</a></li>
+                                    <li><a href="bread-and-noodles.html">パン・麺類</a></li>
                                     <li><a href="notImplemented.html">デリカ・惣菜</a></li>
-                                    <li><a href="notImplemented.html">スイーツ・お菓子</a></li>
+                                    <li><a href="sweets.html">スイーツ・お菓子</a></li>
                                     <li><a href="notImplemented.html">ドリンク</a></li>
                                 </ul>
                             </li>
@@ -194,9 +206,10 @@
     </header>
 
     <main>
-        <section id="kitchen-header" class="sub-hero">
+        <section id="daily-necessities-header" class="sub-hero">
             <h1>日用品</h1>
-            <p>お部屋を彩る、暮らしの道具たち</p>
+            <p>暮らしを快適に保つ生活必需品</p>
+            <p class="price-notice">価格についてはお問い合わせください</p>
         </section>
 
         <section id="products" class="products-section">
@@ -204,116 +217,26 @@
                 <input type="text" id="searchInput" placeholder="商品を検索..." class="search-input">
             </div>
 
+            <!-- モーダル -->
+            <div id="imageModal" class="modal">
+                <div id="modalContent"></div>
+            </div>
+
             <div class="products-grid" id="productsGrid">
-                <div class="product-card" data-id="i1" data-name="デザインチェア" data-category="家具">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269876/interior_hfcy8v.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="デザインチェア">
-                    <h3>デザインチェア</h3>
-                    <p>北欧デザインのシンプルで美しいチェア</p>
-                    <span class="price">¥12,800</span>
-                </div>
-                <div class="product-card" data-id="i2" data-name="フロアライト" data-category="照明">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269876/interior_hfcy8v.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="フロアライト">
-                    <h3>フロアライト</h3>
-                    <p>温かみのある光で空間を演出</p>
-                    <span class="price">¥8,500</span>
-                </div>
-                <div class="product-card" data-id="i3" data-name="オーガニックキャンドル" data-category="インテリア小物">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269876/interior_hfcy8v.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="オーガニックキャンドル">
-                    <h3>オーガニックキャンドル</h3>
-                    <p>天然素材を使用した優しい香りのキャンドル</p>
-                    <span class="price">¥2,800</span>
-                </div>
-                <div class="product-card" data-id="i4" data-name="ウォールミラー" data-category="インテリア">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269876/interior_hfcy8v.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="ウォールミラー">
-                    <h3>ウォールミラー</h3>
-                    <p>シンプルなデザインの壁掛けミラー</p>
-                    <span class="price">¥9,800</span>
-                </div>
-                <div class="product-card" data-id="i5" data-name="クッションカバー" data-category="ファブリック">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269876/interior_hfcy8v.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="クッションカバー">
-                    <h3>クッションカバー</h3>
-                    <p>北欧テイストのデザインクッションカバー</p>
-                    <span class="price">¥3,200</span>
-                </div>
-                <div class="product-card" data-id="i6" data-name="プランターポット" data-category="グリーン">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269876/interior_hfcy8v.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="プランターポット">
-                    <h3>プランターポット</h3>
-                    <p>陶器製のシンプルなプランターポット</p>
-                    <span class="price">¥4,200</span>
-                </div>
-                <div class="product-card" data-id="i7" data-name="ウォールシェルフ" data-category="収納">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269876/interior_hfcy8v.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="ウォールシェルフ">
-                    <h3>ウォールシェルフ</h3>
-                    <p>壁面を有効活用できるシェルフ</p>
-                    <span class="price">¥6,800</span>
-                </div>
-                <div class="product-card" data-id="i8" data-name="アロマディフューザー" data-category="インテリア小物">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269876/interior_hfcy8v.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="アロマディフューザー">
-                    <h3>アロマディフューザー</h3>
-                    <p>デザイン性の高い超音波式ディフューザー</p>
-                    <span class="price">¥5,800</span>
-                </div>
-                <div class="product-card" data-id="i9" data-name="フォトフレーム" data-category="インテリア小物">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269876/interior_hfcy8v.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="フォトフレーム">
-                    <h3>フォトフレーム</h3>
-                    <p>木製のシンプルなフォトフレーム</p>
-                    <span class="price">¥2,500</span>
-                </div>
-                <div class="product-card" data-id="i10" data-name="ルームフレグランス" data-category="インテリア小物">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/f_auto,q_auto/v1740269876/interior_hfcy8v.webp"
-                         srcset="https://res.cloudinary.com/dgldatt9k/image/upload/w_400,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 400w,
-                                 https://res.cloudinary.com/dgldatt9k/image/upload/w_800,f_auto,q_auto/v1740269876/interior_hfcy8v.webp 800w"
-                         sizes="(max-width: 768px) 400px, 800px"
-                         loading="lazy"
-                         alt="ルームフレグランス">
-                    <h3>ルームフレグランス</h3>
-                    <p>さわやかな香りのルームフレグランス</p>
-                    <span class="price">¥3,800</span>
+                <div class="product-card" data-id="d1" data-name="ティッシュ" data-category="日用品">
+                    <script>
+                        (function() {
+                            const imageId = 'v1745704840/1745699000962_aajn2a.jpg';
+                            const altText = 'ティッシュ';
+                            document.write(`
+                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
+                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                </div>
+                            `);
+                        })();
+                    </script>
+                    <h3>sunbloom ティッシュ</h3>
+                    <p>5パック入り（150組2枚重ね）</p>
                 </div>
             </div>
         </section>
@@ -325,5 +248,20 @@
 
     <script src="assets/search.js"></script>
     <script src="assets/menu.js"></script>
+    <script>
+        function openModal(element) {
+            const imageId = element.dataset.imageId;
+            const altText = element.dataset.alt;
+            const modal = document.getElementById('imageModal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = ImageLoader.generateLargeImage(imageId, altText);
+            modal.style.display = 'block';
+        }
+
+        // モーダルクリックで閉じる
+        document.getElementById('imageModal').addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+    </script>
 </body>
 </html>

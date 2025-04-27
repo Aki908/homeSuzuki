@@ -18,6 +18,30 @@
     
     <!-- クリティカルCSS -->
     <style>
+        /* モーダル関連のスタイル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .product-card img {
+            cursor: pointer;
+        }
         /* 初期表示に必要な最小限のスタイル */
         header {
             background: #fff;
@@ -100,9 +124,9 @@
                             <ul>
                                 <li><a href="notImplemented.html">生鮮食品</a></li>
                                 <li><a href="foods.html">食品・調味料</a></li>
-                                <li><a href="notImplemented.html">パン・麺類</a></li>
+                                <li><a href="bread-and-noodles.html">パン・麺類</a></li>
                                 <li><a href="notImplemented.html">デリカ・惣菜</a></li>
-                                <li><a href="notImplemented.html">スイーツ・お菓子</a></li>
+                                <li><a href="sweets.html">スイーツ・お菓子</a></li>
                                 <li><a href="notImplemented.html">ドリンク</a></li>
                             </ul>
                         </li>
@@ -147,10 +171,10 @@
                                 <span class="mobile-group-title">食品・飲料</span>
                                 <ul>
                                     <li><a href="notImplemented.html">生鮮食品</a></li>
-                                    <li><a href="notImplemented.html">食品・調味料</a></li>
-                                    <li><a href="notImplemented.html">パン・麺類</a></li>
+                                    <li><a href="foods.html">食品・調味料</a></li>
+                                    <li><a href="bread-and-noodles.html">パン・麺類</a></li>
                                     <li><a href="notImplemented.html">デリカ・惣菜</a></li>
-                                    <li><a href="notImplemented.html">スイーツ・お菓子</a></li>
+                                    <li><a href="sweets.html">スイーツ・お菓子</a></li>
                                     <li><a href="notImplemented.html">ドリンク</a></li>
                                 </ul>
                             </li>
@@ -193,76 +217,26 @@
                 <input type="text" id="searchInput" placeholder="商品を検索..." class="search-input">
             </div>
 
+            <!-- モーダル -->
+            <div id="imageModal" class="modal">
+                <div id="modalContent"></div>
+            </div>
+
             <div class="products-grid" id="productsGrid">
-                <div class="product-card" data-id="k1" data-name="木製カッティングボード" data-category="調理器具">
+                <div class="product-card" data-id="k1" data-name="現在取扱商品なし" data-category="調理器具">
                     <script>
-                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', '木製カッティングボード'));
+                        (function() {
+                            const imageId = 'v1744425717/interior_dkbtrn.webp';
+                            const altText = '木製カッティングボード';
+                            document.write(`
+                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
+                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                </div>
+                            `);
+                        })();
                     </script>
-                    <h3>木製カッティングボード</h3>
-                    <p>天然木を使用した、使い心地の良いカッティングボード</p>
-                </div>
-                <div class="product-card" data-id="k2" data-name="陶器マグカップ" data-category="食器">
-                    <script>
-                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', '陶器マグカップ'));
-                    </script>
-                    <h3>陶器マグカップ</h3>
-                    <p>手作りの温もりが感じられる、日常使いの マグカップ</p>
-                </div>
-                <div class="product-card" data-id="k3" data-name="ステンレスボウル" data-category="調理器具">
-                    <script>
-                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', 'ステンレスボウル'));
-                    </script>
-                    <h3>ステンレスボウル</h3>
-                    <p>使いやすさを追求した、多目的ボウル</p>
-                </div>
-                <div class="product-card" data-id="k4" data-name="キッチンタイマー" data-category="調理器具">
-                    <script>
-                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', 'キッチンタイマー'));
-                    </script>
-                    <h3>キッチンタイマー</h3>
-                    <p>シンプルで使いやすい、アナログタイマー</p>
-                </div>
-                <div class="product-card" data-id="k5" data-name="箸置きセット" data-category="食器">
-                    <script>
-                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', '箸置きセット'));
-                    </script>
-                    <h3>箸置きセット</h3>
-                    <p>季節を感じる、陶器の箸置き5個セット</p>
-                </div>
-                <div class="product-card" data-id="k6" data-name="キッチンスケール" data-category="調理器具">
-                    <script>
-                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', 'キッチンスケール'));
-                    </script>
-                    <h3>キッチンスケール</h3>
-                    <p>デジタル表示で正確な計量が可能</p>
-                </div>
-                <div class="product-card" data-id="k7" data-name="茶碗セット" data-category="食器">
-                    <script>
-                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', '茶碗セット'));
-                    </script>
-                    <h3>茶碗セット</h3>
-                    <p>日本の伝統が感じられる、上質な茶碗4個セット</p>
-                </div>
-                <div class="product-card" data-id="k8" data-name="シリコンスパチュラ" data-category="調理器具">
-                    <script>
-                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', 'シリコンスパチュラ'));
-                    </script>
-                    <h3>シリコンスパチュラ</h3>
-                    <p>耐熱性に優れた、お手入れ簡単なスパチュラ</p>
-                </div>
-                <div class="product-card" data-id="k9" data-name="ティーポット" data-category="食器">
-                    <script>
-                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', 'ティーポット'));
-                    </script>
-                    <h3>ティーポット</h3>
-                    <p>美しい注ぎ口が特徴の、陶器のティーポット</p>
-                </div>
-                <div class="product-card" data-id="k10" data-name="包丁スタンド" data-category="調理器具">
-                    <script>
-                        document.write(ImageLoader.createProductImage('v1744425717/interior_dkbtrn.webp', '包丁スタンド'));
-                    </script>
-                    <h3>包丁スタンド</h3>
-                    <p>竹製の安定感のある包丁スタンド</p>
+                    <h3>現在取扱商品なし</h3>
+                    <p>調理器具等</p>
                 </div>
             </div>
         </section>
@@ -274,5 +248,20 @@
 
     <script src="assets/search.js"></script>
     <script src="assets/menu.js"></script>
+    <script>
+        function openModal(element) {
+            const imageId = element.dataset.imageId;
+            const altText = element.dataset.alt;
+            const modal = document.getElementById('imageModal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = ImageLoader.generateLargeImage(imageId, altText);
+            modal.style.display = 'block';
+        }
+
+        // モーダルクリックで閉じる
+        document.getElementById('imageModal').addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
