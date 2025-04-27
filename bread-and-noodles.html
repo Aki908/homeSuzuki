@@ -18,6 +18,30 @@
     
     <!-- クリティカルCSS -->
     <style>
+        /* モーダル関連のスタイル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .product-card img {
+            cursor: pointer;
+        }
         /* 初期表示に必要な最小限のスタイル */
         header {
             background: #fff;
@@ -181,6 +205,11 @@
         <div class="menu-overlay"></div>
     </header>
 
+    <!-- モーダル -->
+    <div id="imageModal" class="modal">
+        <div id="modalContent"></div>
+    </div>
+
     <main>
         <section id="bread-noodles-header" class="sub-hero">
             <h1>パン・麺類</h1>
@@ -196,7 +225,15 @@
             <div class="products-grid" id="productsGrid">
                 <div class="product-card" data-id="b1" data-name="焼きそば" data-category="カップ麺">
                     <script>
-                        document.write(ImageLoader.createProductImage('v1745704841/1745699001177_wsjbvj.jpg', '焼きそば'));
+                        (function() {
+                            const imageId = 'v1745704841/1745699001177_wsjbvj.jpg';
+                            const altText = '焼きそば';
+                            document.write(`
+                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
+                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                </div>
+                            `);
+                        })();
                     </script>
                     <h3>焼きそば</h3>
                     <p>磯風味がきいたソース味</p>
@@ -204,7 +241,15 @@
 
                 <div class="product-card" data-id="n1" data-name="ちゃんぽん" data-category="カップ麺">
                     <script>
-                        document.write(ImageLoader.createProductImage('v1745704840/1745699001225_uajy9u.jpg', 'ちゃんぽん'));
+                        (function() {
+                            const imageId = 'v1745704840/1745699001225_uajy9u.jpg';
+                            const altText = 'ちゃんぽん';
+                            document.write(`
+                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
+                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                </div>
+                            `);
+                        })();
                     </script>
                     <h3>ちゃんぽん</h3>
                     <p>もちもちな太麺がよし！！量が多く学生に人気</p>
@@ -212,7 +257,15 @@
 
                 <div class="product-card" data-id="n2" data-name="ラーメン" data-category="カップ麺">
                     <script>
-                        document.write(ImageLoader.createProductImage('v1745704840/1745699001122_xjjopo.jpg', 'ラーメン'));
+                        (function() {
+                            const imageId = 'v1745704840/1745699001122_xjjopo.jpg';
+                            const altText = 'ラーメン';
+                            document.write(`
+                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
+                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                </div>
+                            `);
+                        })();
                     </script>
                     <h3>海鮮しおぬーどる</h3>
                     <p>魚介のうまみが凝縮！！コク塩味</p>
@@ -220,7 +273,15 @@
 
                 <div class="product-card" data-id="n3" data-name="ラーメン" data-category="カップ麺">
                     <script>
-                        document.write(ImageLoader.createProductImage('v1745704840/1745699001268_ubbtqr.jpg', 'ラーメン'));
+                        (function() {
+                            const imageId = 'v1745704840/1745699001268_ubbtqr.jpg';
+                            const altText = 'ラーメン';
+                            document.write(`
+                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
+                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                </div>
+                            `);
+                        })();
                     </script>
                     <h3>味味噌ヌードル</h3>
                     <p>風味豊かな味噌味</p>
@@ -228,7 +289,15 @@
 
                 <div class="product-card" data-id="p4" data-name="醤油ラーメン（赤袋）" data-category="調味料">
                     <script>
-                        document.write(ImageLoader.createProductImage('v1744422646/1000014968_z1z9j0.jpg', '醤油ラーメン（赤袋）'));
+                        (function() {
+                            const imageId = 'v1744422646/1000014968_z1z9j0.jpg';
+                            const altText = '醤油ラーメン（赤袋）';
+                            document.write(`
+                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
+                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                </div>
+                            `);
+                        })();
                     </script>
                     <h3>醤油ラーメン（赤袋）</h3>
                     <p>コクのある醤油スープが特徴の、定番の即席ラーメン</p>
@@ -243,5 +312,20 @@
 
     <script src="assets/search.js"></script>
     <script src="assets/menu.js"></script>
+    <script>
+        function openModal(element) {
+            const imageId = element.dataset.imageId;
+            const altText = element.dataset.alt;
+            const modal = document.getElementById('imageModal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = ImageLoader.generateLargeImage(imageId, altText);
+            modal.style.display = 'block';
+        }
+
+        // モーダルクリックで閉じる
+        document.getElementById('imageModal').addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+    </script>
 </body>
 </html>

@@ -40,9 +40,10 @@ class ImageLoader {
             .join('\n        ');
     }
 
-    static generateLargeImage(imageId) {
+    static generateLargeImage(imageId, altText) {
         const auto = CLOUDINARY_CONFIG.defaultTransforms.auto;
-        return `${CLOUDINARY_CONFIG.baseUrl}/c_fill,w_1600,${auto}/${imageId}`;
+        const url = `${CLOUDINARY_CONFIG.baseUrl}/c_fill,w_1600,${auto}/${imageId}`;
+        return `<img src="${url}" alt="${altText}" loading="eager">`;
     }
 
     static createProductImage(imageId, altText) {

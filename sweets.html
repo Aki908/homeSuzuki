@@ -18,6 +18,30 @@
     
     <!-- クリティカルCSS -->
     <style>
+        /* モーダル関連のスタイル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .product-card img {
+            cursor: pointer;
+        }
         /* 初期表示に必要な最小限のスタイル */
         header {
             background: #fff;
@@ -70,6 +94,11 @@
     <script src="assets/image-loader.js"></script>
 </head>
 <body>
+    <!-- モーダル -->
+    <div id="imageModal" class="modal">
+        <div id="modalContent"></div>
+    </div>
+
     <header>
         <div class="site-logo">
             <a href="index.html">Suzuki Zakka Store</a>
@@ -194,13 +223,21 @@
             </div>
 
             <div class="products-grid" id="productsGrid">
-                <div class="product-card" data-id="s1" data-name="塩飴" data-category="お菓子">
-                    <script>
-                        document.write(ImageLoader.createProductImage('v1745704840/1745699000912_kfgg4t.jpg', '塩飴'));
-                    </script>
-                    <h3>伝統のしお飴</h3>
-                    <p>熱中症対策に最適な、昔ながらの塩飴</p>
-                </div>
+                <script>
+                    (function() {
+                        const imageId = 'v1745704840/1745699000912_kfgg4t.jpg';
+                        const altText = '塩飴';
+                        document.write(`
+                            <div class="product-card" data-id="s1" data-name="${altText}" data-category="お菓子">
+                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
+                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                </div>
+                                <h3>伝統のしお飴</h3>
+                                <p>熱中症対策に最適な、昔ながらの塩飴</p>
+                            </div>
+                        `);
+                    })();
+                </script>
             </div>
         </section>
     </main>
@@ -211,5 +248,20 @@
 
     <script src="assets/search.js"></script>
     <script src="assets/menu.js"></script>
+    <script>
+        function openModal(element) {
+            const imageId = element.dataset.imageId;
+            const altText = element.dataset.alt;
+            const modal = document.getElementById('imageModal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = ImageLoader.generateLargeImage(imageId, altText);
+            modal.style.display = 'block';
+        }
+
+        // モーダルクリックで閉じる
+        document.getElementById('imageModal').addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+    </script>
 </body>
 </html>

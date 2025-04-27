@@ -18,6 +18,30 @@
     
     <!-- クリティカルCSS -->
     <style>
+        /* モーダル関連のスタイル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .product-card img {
+            cursor: pointer;
+        }
         /* 初期表示に必要な最小限のスタイル */
         header {
             background: #fff;
@@ -193,15 +217,27 @@
                 <input type="text" id="searchInput" placeholder="商品を検索..." class="search-input">
             </div>
 
+            <!-- モーダル -->
+            <div id="imageModal" class="modal">
+                <div id="modalContent"></div>
+            </div>
+
             <div class="products-grid" id="productsGrid">
                 <div class="product-card" data-id="d1" data-name="ティッシュ" data-category="日用品">
                     <script>
-                        document.write(ImageLoader.createProductImage('v1745704840/1745699000962_aajn2a.jpg', 'ティッシュ'));
+                        (function() {
+                            const imageId = 'v1745704840/1745699000962_aajn2a.jpg';
+                            const altText = 'ティッシュ';
+                            document.write(`
+                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
+                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                </div>
+                            `);
+                        })();
                     </script>
                     <h3>sunbloom ティッシュ</h3>
                     <p>5パック入り（150組2枚重ね）</p>
                 </div>
-
             </div>
         </section>
     </main>
@@ -212,5 +248,20 @@
 
     <script src="assets/search.js"></script>
     <script src="assets/menu.js"></script>
+    <script>
+        function openModal(element) {
+            const imageId = element.dataset.imageId;
+            const altText = element.dataset.alt;
+            const modal = document.getElementById('imageModal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = ImageLoader.generateLargeImage(imageId, altText);
+            modal.style.display = 'block';
+        }
+
+        // モーダルクリックで閉じる
+        document.getElementById('imageModal').addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
