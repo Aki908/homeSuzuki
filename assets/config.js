@@ -8,7 +8,7 @@ const config = {
         },
         production2: {
             domain: 'akihisasa.github.io',
-            basePath: '/home'
+            basePath: '/homeSuzukiProduct'
         },
         staging: {
             domain: 'staging.example.com',
