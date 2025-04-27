@@ -223,85 +223,66 @@
             </div>
 
             <div class="products-grid" id="productsGrid">
-                <div class="product-card" data-id="b1" data-name="焼きそば" data-category="カップ麺">
-                    <script>
-                        (function() {
-                            const imageId = 'v1745704841/1745699001177_wsjbvj.jpg';
-                            const altText = '焼きそば';
+                <script>
+                    (function() {
+                        const products = [
+                            {
+                                id: "b1",
+                                imageId: 'v1745704841/1745699001177_wsjbvj.jpg',
+                                name: "焼きそば",
+                                description: "磯風味がきいたソース味",
+                                category: "カップ麺"
+                            },
+                            {
+                                id: "n1",
+                                imageId: 'v1745704840/1745699001225_uajy9u.jpg',
+                                name: "ちゃんぽん",
+                                description: "もちもちな太麺がよし！！量が多く学生に人気",
+                                category: "カップ麺"
+                            },
+                            {
+                                id: "n4",
+                                imageId: 'v1745726155/1745725718410_we3crd.jpg',
+                                name: "カップヌードル シーフード",
+                                description: "濃厚な魚介の旨みが詰まった人気の一品",
+                                category: "カップ麺"
+                            },
+                            {
+                                id: "n2",
+                                imageId: 'v1745704840/1745699001122_xjjopo.jpg',
+                                name: "海鮮しおぬーどる",
+                                description: "魚介のうまみが凝縮！！コク塩味",
+                                category: "カップ麺"
+                            },
+                            {
+                                id: "n3",
+                                imageId: 'v1745704840/1745699001268_ubbtqr.jpg',
+                                name: "味味噌ヌードル",
+                                description: "風味豊かな味噌味",
+                                category: "カップ麺"
+                            },
+                            {
+                                id: "p4",
+                                imageId: 'v1744422646/1000014968_z1z9j0.jpg',
+                                name: "醤油ラーメン（赤袋）",
+                                description: "コクのある醤油スープが特徴の、定番の即席ラーメン",
+                                category: "調味料"
+                            }
+                        ];
+                        
+                        products.forEach(product => {
                             document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                <div class="product-card" data-id="${product.id}" data-name="${product.name}" data-category="${product.category}">
+                                    <div class="product-image" onclick="openModal(this)" data-image-id="${product.imageId}" data-alt="${product.name}">
+                                        ${ImageLoader.createProductImage(product.imageId, product.name)}
+                                    </div>
+                                    <h3>${product.name}</h3>
+                                    <p>${product.description}</p>
                                 </div>
                             `);
-                        })();
-                    </script>
-                    <h3>焼きそば</h3>
-                    <p>磯風味がきいたソース味</p>
-                </div>
-
-                <div class="product-card" data-id="n1" data-name="ちゃんぽん" data-category="カップ麺">
-                    <script>
-                        (function() {
-                            const imageId = 'v1745704840/1745699001225_uajy9u.jpg';
-                            const altText = 'ちゃんぽん';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>ちゃんぽん</h3>
-                    <p>もちもちな太麺がよし！！量が多く学生に人気</p>
-                </div>
-
-                <div class="product-card" data-id="n2" data-name="ラーメン" data-category="カップ麺">
-                    <script>
-                        (function() {
-                            const imageId = 'v1745704840/1745699001122_xjjopo.jpg';
-                            const altText = 'ラーメン';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>海鮮しおぬーどる</h3>
-                    <p>魚介のうまみが凝縮！！コク塩味</p>
-                </div>
-
-                <div class="product-card" data-id="n3" data-name="ラーメン" data-category="カップ麺">
-                    <script>
-                        (function() {
-                            const imageId = 'v1745704840/1745699001268_ubbtqr.jpg';
-                            const altText = 'ラーメン';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>味味噌ヌードル</h3>
-                    <p>風味豊かな味噌味</p>
-                </div>
-
-                <div class="product-card" data-id="p4" data-name="醤油ラーメン（赤袋）" data-category="調味料">
-                    <script>
-                        (function() {
-                            const imageId = 'v1744422646/1000014968_z1z9j0.jpg';
-                            const altText = '醤油ラーメン（赤袋）';
-                            document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
-                                </div>
-                            `);
-                        })();
-                    </script>
-                    <h3>醤油ラーメン（赤袋）</h3>
-                    <p>コクのある醤油スープが特徴の、定番の即席ラーメン</p>
-                </div>
+                        });
+                    })();
+                </script>
             </div>
         </section>
     </main>
