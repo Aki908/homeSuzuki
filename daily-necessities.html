@@ -223,21 +223,32 @@
             </div>
 
             <div class="products-grid" id="productsGrid">
-                <div class="product-card" data-id="d1" data-name="ティッシュ" data-category="日用品">
-                    <script>
-                        (function() {
-                            const imageId = 'v1745704840/1745699000962_aajn2a.jpg';
-                            const altText = 'ティッシュ';
+                <script>
+                    (function() {
+                        const products = [
+                            {
+                                id: "d1",
+                                imageId: 'v1745704840/1745699000962_aajn2a.jpg',
+                                name: "ティッシュ",
+                                title: "sunbloom ティッシュ",
+                                description: "5パック入り（150組2枚重ね）",
+                                category: "日用品"
+                            }
+                        ];
+                        
+                        products.forEach(product => {
                             document.write(`
-                                <div class="product-image" onclick="openModal(this)" data-image-id="${imageId}" data-alt="${altText}">
-                                    ${ImageLoader.createProductImage(imageId, altText)}
+                                <div class="product-card" data-id="${product.id}" data-name="${product.name}" data-category="${product.category}">
+                                    <div class="product-image" onclick="openModal(this)" data-image-id="${product.imageId}" data-alt="${product.name}">
+                                        ${ImageLoader.createProductImage(product.imageId, product.name)}
+                                    </div>
+                                    <h3>${product.title}</h3>
+                                    <p>${product.description}</p>
                                 </div>
                             `);
-                        })();
-                    </script>
-                    <h3>sunbloom ティッシュ</h3>
-                    <p>5パック入り（150組2枚重ね）</p>
-                </div>
+                        });
+                    })();
+                </script>
             </div>
         </section>
     </main>
