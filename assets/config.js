@@ -17,14 +17,14 @@ const config = {
             isDebug: false
         },
         customDomain: {
-            domain: 'your-domain.com',  // ここに取得したドメインを設定
+            domain: 'www.foodfamily.jp',  // ここに取得したドメインを設定
             basePath: '',  // ルートパスを使用
             isDebug: false
         },
         staging: {
-            domain: 'staging.example.com',
-            basePath: '/staging',
-            isDebug: true
+            domain: 'aki908.github.io',
+            basePath: '/homeSuzuki',
+            isDebug: false
         },
         development: {
             domain: 'localhost',
