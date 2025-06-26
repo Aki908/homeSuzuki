@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="焼きたてパンと様々な種類の麺類を取り揃えています。">
+    <meta name="description" content="UUMAIZING パン・麺類 - 焼きたてパンと様々な種類の麺類を取り揃えています。">
+    <meta name="keywords" content="UUMAIZING,パン,麺類,焼きたて,様々な種類">
+    
+    <!-- ファビコン設定 -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="assets/images/logo.webp">
+    
     <meta http-equiv="Cache-Control" content="max-age=31536000">
-    <title>パン・麺類 - FOOD FAMIRY</title>
+    <title>パン・麺類 - UUMAIZING</title>
     
     <!-- リソースの事前接続設定 -->
     <link rel="dns-prefetch" href="//res.cloudinary.com">
@@ -72,6 +80,10 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
         }
         .products-grid {
             display: grid;
@@ -96,7 +108,7 @@
 <body>
     <header>
         <div class="site-logo">
-            <a href="index.html">FOOD FAMIRY</a>
+            <a href="index.html">UUMAIZING</a>
         </div>
         <!-- ハンバーガーメニューボタン -->
         <button class="menu-toggle" aria-label="メニュー">
@@ -115,26 +127,26 @@
                         <li class="menu-group">
                             <span class="group-title">食品・飲料</span>
                             <ul>
-                                <li><a href="notImplemented.html">生鮮食品</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">生鮮食品</a></li>
                                 <li><a href="foods.html">食品・調味料</a></li>
                                 <li><a href="bread-and-noodles.html">パン・麺類</a></li>
-                                <li><a href="notImplemented.html">デリカ・惣菜</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">デリカ・惣菜</a></li>
                                 <li><a href="sweets.html">スイーツ・お菓子</a></li>
-                                <li><a href="notImplemented.html">ドリンク</a></li>
+                                <li><a href="drinks.html">ドリンク</a></li>
                             </ul>
                         </li>
                         <li class="menu-group">
                             <span class="group-title">生活用品</span>
                             <ul>
-                                <li><a href="kitchen.html">キッチン用品</a></li>
-                                <li><a href="notImplemented.html">インテリア用品</a></li>
+                                <li style="display: none;"><a href="kitchen.html">キッチン用品</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">インテリア用品</a></li>
                                 <li><a href="daily-necessities.html">日用品</a></li>
-                                <li><a href="notImplemented.html">ベビー用品</a></li>
-                                <li><a href="notImplemented.html">衣料品</a></li>
-                                <li><a href="notImplemented.html">季節商品</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">ベビー用品</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">衣料品</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">季節商品</a></li>
                             </ul>
                         </li>
-                        <li class="menu-group">
+                        <li class="menu-group" style="display: none;">
                             <span class="group-title">ビューティー・ヘルスケア</span>
                             <ul>
                                 <li><a href="notImplemented.html">ヘルスケア</a></li>
@@ -157,26 +169,26 @@
                             <li class="mobile-menu-group">
                                 <span class="mobile-group-title">食品・飲料</span>
                                 <ul>
-                                    <li><a href="notImplemented.html">生鮮食品</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">生鮮食品</a></li>
                                     <li><a href="foods.html">食品・調味料</a></li>
                                     <li><a href="bread-and-noodles.html">パン・麺類</a></li>
-                                    <li><a href="notImplemented.html">デリカ・惣菜</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">デリカ・惣菜</a></li>
                                     <li><a href="sweets.html">スイーツ・お菓子</a></li>
-                                    <li><a href="notImplemented.html">ドリンク</a></li>
+                                    <li><a href="drinks.html">ドリンク</a></li>
                                 </ul>
                             </li>
                             <li class="mobile-menu-group">
                                 <span class="mobile-group-title">生活用品</span>
                                 <ul>
-                                    <li><a href="kitchen.html">キッチン用品</a></li>
-                                    <li><a href="notImplemented.html">インテリア用品</a></li>
+                                    <li style="display: none;"><a href="kitchen.html">キッチン用品</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">インテリア用品</a></li>
                                     <li><a href="daily-necessities.html">日用品</a></li>
-                                    <li><a href="notImplemented.html">ベビー用品</a></li>
-                                    <li><a href="notImplemented.html">衣料品</a></li>
-                                    <li><a href="notImplemented.html">季節商品</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">ベビー用品</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">衣料品</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">季節商品</a></li>
                                 </ul>
                             </li>
-                            <li class="mobile-menu-group">
+                            <li class="mobile-menu-group" style="display: none;">
                                 <span class="mobile-group-title">ビューティー・ヘルスケア</span>
                                 <ul>
                                     <li><a href="notImplemented.html">ヘルスケア</a></li>
@@ -218,6 +230,7 @@
                                 id: "b1",
                                 imageId: 'v1745704841/1745699001177_wsjbvj.jpg',
                                 name: "焼きそば",
+                                title: "焼きそば",
                                 description: "磯風味がきいたソース味",
                                 category: "カップ麺"
                             },
@@ -225,6 +238,7 @@
                                 id: "n1",
                                 imageId: 'v1745704840/1745699001225_uajy9u.jpg',
                                 name: "ちゃんぽん",
+                                title: "ちゃんぽん",
                                 description: "もちもちな太麺がよし！！量が多く学生に人気",
                                 category: "カップ麺"
                             },
@@ -232,6 +246,7 @@
                                 id: "n4",
                                 imageId: 'v1745726155/1745725718410_we3crd.jpg',
                                 name: "わかめ しょうゆ ラーメン",
+                                title: "わかめ しょうゆ ラーメン",
                                 description: "大ボリュームの食べ応えのある わかめラーメン",
                                 category: "カップ麺"
                             },
@@ -239,6 +254,7 @@
                                 id: "n2",
                                 imageId: 'v1745704840/1745699001122_xjjopo.jpg',
                                 name: "海鮮しおぬーどる",
+                                title: "海鮮しおぬーどる",
                                 description: "魚介のうまみが凝縮！！コク塩味",
                                 category: "カップ麺"
                             },
@@ -246,6 +262,7 @@
                                 id: "n3",
                                 imageId: 'v1745704840/1745699001268_ubbtqr.jpg',
                                 name: "味味噌ヌードル",
+                                title: "味味噌ヌードル",
                                 description: "風味豊かな味噌味",
                                 category: "カップ麺"
                             },
@@ -253,8 +270,41 @@
                                 id: "p4",
                                 imageId: 'v1744422646/1000014968_z1z9j0.jpg',
                                 name: "醤油ラーメン（赤袋）",
+                                title: "醤油ラーメン（赤袋）",
                                 description: "コクのある醤油スープが特徴の、定番の即席ラーメン",
-                                category: "調味料"
+                                category: "即席麺"
+                            },
+                            {
+                                id: "n5",
+                                imageId: 'v1746494258/1746455873485_dbnzcj.jpg',
+                                name: "皿うどん",
+                                title: "皿うどん",
+                                description: "鶏の旨味が凝縮されたスープ",
+                                category: "即席麺"
+                            },
+                            {
+                                id: "n6",
+                                imageId: 'v1746494257/1746455867932_jiy2rc.jpg',
+                                name: "ざるラーメン",
+                                title: "ざるラーメン",
+                                description: "ゆず風味和風スープ",
+                                category: "即席麺"
+                            },
+                            {
+                                id: "n7",
+                                imageId: 'v1746494252/1746455867837_gd3azo.jpg',
+                                name: "まろやかごまだれ冷やし中華",
+                                title: "まろやかごまだれ冷やし中華",
+                                description: "ごまの風味が香る、まろやかな冷やし中華",
+                                category: "即席麺"
+                            },
+                            {
+                                id: "n8",
+                                imageId: 'v1746494252/1746455867575_jbrah1.jpg',
+                                name: "和風ざるラーメン",
+                                title: "和風ざるラーメン",
+                                description: "梅かつおだしの和風スープ",
+                                category: "即席麺"
                             }
                         ];
                         
@@ -264,7 +314,7 @@
                                     <div class="product-image" onclick="openModal(this)" data-image-id="${product.imageId}" data-alt="${product.name}">
                                         ${ImageLoader.createProductImage(product.imageId, product.name)}
                                     </div>
-                                    <h3>${product.name}</h3>
+                                    <h3>${product.title}</h3>
                                     <p>${product.description}</p>
                                 </div>
                             `);
@@ -276,7 +326,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 FOOD FAMIRY. All rights reserved.</p>
+        <p>&copy; 2025 UUMAIZING. All rights reserved.</p>
     </footer>
 
     <script src="assets/search.js"></script>

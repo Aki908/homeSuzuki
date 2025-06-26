@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="手作りの美味しさにこだわった、素材を活かしたお菓子を取り揃えています。">
+    <meta name="description" content="UUMAIZING スイーツ・お菓子 - 手作りの美味しさにこだわった、素材を活かしたお菓子を取り揃えています。">
+    <meta name="keywords" content="UUMAIZING,スイーツ,お菓子,手作り,美味しい,素材">
+    
+    <!-- ファビコン設定 -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo.webp">
+    <link rel="apple-touch-icon" href="assets/images/logo.webp">
+    
     <meta http-equiv="Cache-Control" content="max-age=31536000">
-    <title>スイーツ・お菓子 - FOOD FAMIRY</title>
+    <title>スイーツ・お菓子 - UUMAIZING</title>
     
     <!-- リソースの事前接続設定 -->
     <link rel="dns-prefetch" href="//res.cloudinary.com">
@@ -72,6 +80,10 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
         }
         .products-grid {
             display: grid;
@@ -101,7 +113,7 @@
 
     <header>
         <div class="site-logo">
-            <a href="index.html">FOOD FAMIRY</a>
+            <a href="index.html">UUMAIZING</a>
         </div>
         <!-- ハンバーガーメニューボタン -->
         <button class="menu-toggle" aria-label="メニュー">
@@ -120,26 +132,26 @@
                         <li class="menu-group">
                             <span class="group-title">食品・飲料</span>
                             <ul>
-                                <li><a href="notImplemented.html">生鮮食品</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">生鮮食品</a></li>
                                 <li><a href="foods.html">食品・調味料</a></li>
                                 <li><a href="bread-and-noodles.html">パン・麺類</a></li>
-                                <li><a href="notImplemented.html">デリカ・惣菜</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">デリカ・惣菜</a></li>
                                 <li><a href="sweets.html">スイーツ・お菓子</a></li>
-                                <li><a href="notImplemented.html">ドリンク</a></li>
+                                <li><a href="drinks.html">ドリンク</a></li>
                             </ul>
                         </li>
                         <li class="menu-group">
                             <span class="group-title">生活用品</span>
                             <ul>
-                                <li><a href="kitchen.html">キッチン用品</a></li>
-                                <li><a href="notImplemented.html">インテリア用品</a></li>
+                                <li style="display: none;"><a href="kitchen.html">キッチン用品</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">インテリア用品</a></li>
                                 <li><a href="daily-necessities.html">日用品</a></li>
-                                <li><a href="notImplemented.html">ベビー用品</a></li>
-                                <li><a href="notImplemented.html">衣料品</a></li>
-                                <li><a href="notImplemented.html">季節商品</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">ベビー用品</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">衣料品</a></li>
+                                <li style="display: none;"><a href="notImplemented.html">季節商品</a></li>
                             </ul>
                         </li>
-                        <li class="menu-group">
+                        <li class="menu-group" style="display: none;">
                             <span class="group-title">ビューティー・ヘルスケア</span>
                             <ul>
                                 <li><a href="notImplemented.html">ヘルスケア</a></li>
@@ -162,26 +174,26 @@
                             <li class="mobile-menu-group">
                                 <span class="mobile-group-title">食品・飲料</span>
                                 <ul>
-                                    <li><a href="notImplemented.html">生鮮食品</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">生鮮食品</a></li>
                                     <li><a href="foods.html">食品・調味料</a></li>
                                     <li><a href="bread-and-noodles.html">パン・麺類</a></li>
-                                    <li><a href="notImplemented.html">デリカ・惣菜</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">デリカ・惣菜</a></li>
                                     <li><a href="sweets.html">スイーツ・お菓子</a></li>
-                                    <li><a href="notImplemented.html">ドリンク</a></li>
+                                    <li><a href="drinks.html">ドリンク</a></li>
                                 </ul>
                             </li>
                             <li class="mobile-menu-group">
                                 <span class="mobile-group-title">生活用品</span>
                                 <ul>
-                                    <li><a href="kitchen.html">キッチン用品</a></li>
-                                    <li><a href="notImplemented.html">インテリア用品</a></li>
+                                    <li style="display: none;"><a href="kitchen.html">キッチン用品</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">インテリア用品</a></li>
                                     <li><a href="daily-necessities.html">日用品</a></li>
-                                    <li><a href="notImplemented.html">ベビー用品</a></li>
-                                    <li><a href="notImplemented.html">衣料品</a></li>
-                                    <li><a href="notImplemented.html">季節商品</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">ベビー用品</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">衣料品</a></li>
+                                    <li style="display: none;"><a href="notImplemented.html">季節商品</a></li>
                                 </ul>
                             </li>
-                            <li class="mobile-menu-group">
+                            <li class="mobile-menu-group" style="display: none;">
                                 <span class="mobile-group-title">ビューティー・ヘルスケア</span>
                                 <ul>
                                     <li><a href="notImplemented.html">ヘルスケア</a></li>
@@ -293,6 +305,30 @@
                                 title: "おいしいドーナッツ",
                                 description: "ふんわり生地のドーナッツ",
                                 category: "お菓子"
+                            },
+                            {
+                                id: "s11",
+                                imageId: 'v1746494253/1746455873781_ebufg9.jpg',
+                                name: "パティシエのカステラ",
+                                title: "パティシエのカステラ",
+                                description: "しっとりふわふわのカステラ",
+                                category: "お菓子"
+                            },
+                            {
+                                id: "s12",
+                                imageId: 'v1746494253/1746455873650_wkeb5s.jpg',
+                                name: "塩味ポップコーン",
+                                title: "塩味ポップコーン",
+                                description: "シンプルな味付けで素材の美味しさを引き立てる",
+                                category: "お菓子"
+                            },
+                            {
+                                id: "s13",
+                                imageId: 'v1746525674/1746521540137_hyht8v.jpg',
+                                name: "MY MOTTO",
+                                title: "MY MOTTO",
+                                description: "マイモット ウェハース ティラミス味",
+                                category: "お菓子"
                             }
                         ];
                         
@@ -314,7 +350,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 FOOD FAMIRY. All rights reserved.</p>
+        <p>&copy; 2025 UUMAIZING. All rights reserved.</p>
     </footer>
 
     <script src="assets/search.js"></script>
