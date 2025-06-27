@@ -24,7 +24,7 @@ const config = {
         staging: {
             domain: 'aki908.github.io',
             basePath: '/homeSuzuki',
-            isDebug: false
+            isDebug: true
         },
         development: {
             domain: 'localhost',
@@ -35,6 +35,20 @@ const config = {
 
     // 現在の環境を判定
     getCurrentEnv() {
+        // URLパラメータでの環境指定をチェック
+        const urlParams = new URLSearchParams(window.location.search);
+        const envParam = urlParams.get('env');
+        if (envParam && this.environments[envParam]) {
+            return envParam;
+        }
+        
+        // ローカルストレージでの環境指定をチェック
+        const storedEnv = localStorage.getItem('uumaizing_env');
+        if (storedEnv && this.environments[storedEnv]) {
+            return storedEnv;
+        }
+        
+        // ホスト名ベースでの判定
         const hostname = window.location.hostname;
         for (const [env, settings] of Object.entries(this.environments)) {
             if (hostname.includes(settings.domain)) {
@@ -42,6 +56,17 @@ const config = {
             }
         }
         return 'development'; // デフォルト
+    },
+
+    // 環境を手動設定する関数（デバッグ用）
+    setEnvironment(env) {
+        if (this.environments[env]) {
+            localStorage.setItem('uumaizing_env', env);
+            console.log(`Environment set to: ${env}`);
+            location.reload();
+        } else {
+            console.error(`Invalid environment: ${env}`);
+        }
     },
 
     // 環境に応じたベースパスを取得
@@ -102,5 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
         config.debug();
         console.log('Assets path example:', config.getAssetPath('assets/example.js'));
         console.log('Worker path example:', config.getWorkerPath('assets/search-worker.js'));
+        console.log('\n環境切り替え方法:');
+        console.log('window.siteConfig.setEnvironment("staging") - staging環境に切り替え');
+        console.log('window.siteConfig.setEnvironment("production") - production環境に切り替え');
+        console.log('window.siteConfig.setEnvironment("development") - development環境に切り替え');
     }
 });

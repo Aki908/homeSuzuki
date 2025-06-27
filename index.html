@@ -205,10 +205,54 @@
             </div>
         </section>
 
-        <section id="concept">
-            <h2>コンセプト</h2>
-            <p>私たちは、日々の暮らしに寄り添う食料品を厳選してお届けします。</p>
-            <p>シンプルで温かみのある商品を通じて、お客様の暮らしがより豊かになることを願っています。</p>
+        <section id="shopping-service">
+            <div class="service-banner">
+                <h2>🌟どんな物でもお買い物代行します！</h2>
+                <p class="service-subtitle">「重くて運べない…」「買いに行く時間がない…」<br>
+                そんなあなたのために、<strong>UUMAIZING（ウーマイジング）</strong>が代わりにお買い物に行きます！</p>
+            </div>
+
+            <div class="service-content">
+                <div class="service-section">
+                    <h3>🛒こんなものをお任せください！</h3>
+                    <div class="items-grid">
+                        <div class="item-category">
+                            <p>肉・魚・野菜・お米・飲料</p>
+                        </div>
+                        <div class="item-category">
+                            <p>パン・お菓子・お酒・日用品 などなど…</p>
+                        </div>
+                    </div>
+                    <div class="highlight-message">
+                        <p><strong>＼どんな物でもOK！／</strong><br>
+                        買い出しが大変な 重い物・かさばる物もご自宅までお届けします！</p>
+                    </div>
+                </div>
+
+                <div class="service-section">
+                    <h3>💰料金プラン（わかりやすく、安心価格）</h3>
+                    <div class="pricing-plans">
+                        <div class="pricing-card">
+                            <div class="price-amount">お買い物金額 ¥20,000まで</div>
+                            <div class="price-fee">→ 1回 ¥1,500</div>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="price-amount">お買い物金額 ¥40,000まで</div>
+                            <div class="price-fee">→ 1回 ¥3,000</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="service-section about-section">
+                    <h3>UUMAIZINGとは？</h3>
+                    <p>地域に寄り添う食品販売業。<br>
+                    お買い物サポートであなたの暮らしをちょっと楽にします♪</p>
+                    <div class="final-message">
+                        <p><strong>✅これで、らくらくお買い物！</strong></p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="products">
@@ -336,21 +380,47 @@
         </section>
 
         <section id="contact">
-            <h2>お問い合わせ</h2>
+            <h2>お問い合わせ・ご注文</h2>
+            
             <div class="contact-info">
-                <p>UUMAIZING</p>
-                <p>TEL: 070-2322-3239</p>
-                <p>お気軽にお問い合わせください。</p>
+                <h3>📅営業日・ご注文方法</h3>
+                <p><strong>営業日：</strong>月〜金</p>
+                <p><strong>受付方法：</strong>LINE または お電話で</p>
+                <div class="order-requirements">
+                    <p><strong>ご注文時は、以下をお知らせください：</strong></p>
+                    <ul>
+                        <li>お名前</li>
+                        <li>ご住所</li>
+                        <li>ご希望の商品名や内容</li>
+                    </ul>
+                    <div class="additional-info" style="margin-top: 1.5rem;">
+                        <p><strong>以下のようなご相談も承ります：</strong></p>
+                        <ul>
+                            <li>サイトに掲載のない商品のお取り寄せ</li>
+                            <li>田舎や離島など、他社が対応していない地域への配送</li>
+                        </ul>
+                        <p style="margin-top: 0.8rem;">お気軽にお問い合わせください！</p>
+                    </div>
+                </div>
             </div>
-            <div class="contact-form">
-                <a href="https://forms.gle/H2uYwZRHa9k4yGsb9" target="_blank" class="contact-button">お問い合わせフォームを開く</a>
-            </div>
-            <div class="line-button">
-                <a href="notImplemented.html" class="line-add-friend">
-                    <img src="https://res.cloudinary.com/dgldatt9k/image/upload/w_300,q_auto,f_auto/v1740271253/ja_tyt1gl.png" 
-                         alt="LINE公式アカウントを友だち追加" 
-                         loading="lazy">
-                </a>
+
+            <div class="contact-methods">
+                <div class="contact-option">
+                    <h4>📞 お電話でのご注文・お問い合わせ</h4>
+                    <p class="phone-number">070-2322-3239</p>
+                    <p>お気軽にお電話ください</p>
+                </div>
+
+                <div class="contact-option">
+                    <h4>📱 LINEでのご注文・お問い合わせ</h4>
+                    <img src="assets/images/line.ico" alt="LINE公式アカウント" width="180" height="180">
+                    <p>LINEでのご注文・お問い合わせはこちら</p>
+                </div>
+
+                <div class="contact-option">
+                    <h4>その他のお問い合わせ</h4>
+                    <a href="https://forms.gle/H2uYwZRHa9k4yGsb9" target="_blank" class="contact-button">お問い合わせフォームを開く</a>
+                </div>
             </div>
         </section>
     </main>
@@ -358,6 +428,33 @@
     <footer>
         <p>&copy; 2025 UUMAIZING. All rights reserved.</p>
     </footer>
+    
+    <!-- 環境別アイコン・情報設定 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.siteConfig) {
+                const currentEnv = window.siteConfig.getCurrentEnv();
+                
+                if (currentEnv === 'staging') {
+                    // LINEアイコンの切り替え
+                    const lineIcon = document.querySelector('img[src="assets/images/line.ico"]');
+                    if (lineIcon) {
+                        const basePath = window.siteConfig.getBasePath();
+                        lineIcon.src = `${basePath ? basePath + '/' : ''}assets/images/line_sample.ico`;
+                        lineIcon.alt = 'LINE公式アカウント (staging)';
+                    }
+                    
+                    // 電話番号をマスク
+                    const phoneNumber = document.querySelector('.phone-number');
+                    if (phoneNumber) {
+                        phoneNumber.textContent = '070-xxxx-xxxx';
+                        phoneNumber.style.color = '#888';
+                        phoneNumber.title = 'staging環境では電話番号が非表示になります';
+                    }
+                }
+            }
+        });
+    </script>
     <script src="assets/menu.js"></script>
 </body>
 </html>
