@@ -7,8 +7,8 @@ const config = {
     // 環境設定
     environments: {
         production: {
-            domain: 'aki908.github.io',
-            basePath: '/homeSuzuki',
+            domain: 'www.foodfamily.jp',  // ここに取得したドメインを設定
+            basePath: '',  // ルートパスを使用
             isDebug: false
         },
         production2: {
@@ -50,11 +50,21 @@ const config = {
         
         // ホスト名ベースでの判定
         const hostname = window.location.hostname;
-        for (const [env, settings] of Object.entries(this.environments)) {
-            if (hostname.includes(settings.domain)) {
-                return env;
-            }
+        
+        // 各環境を明確に判定
+        if (hostname.includes('www.foodfamily.jp')) {
+            return 'production';
         }
+        if (hostname.includes('akihisasa.github.io')) {
+            return 'production2';
+        }
+        if (hostname.includes('aki908.github.io')) {
+            return 'staging';
+        }
+        if (hostname.includes('localhost')) {
+            return 'development';
+        }
+        
         return 'development'; // デフォルト
     },
 
@@ -90,9 +100,17 @@ const config = {
 
     // デバッグ情報
     debug() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const storedEnv = localStorage.getItem('uumaizing_env');
+        
+        console.log('=== Environment Debug Info ===');
         console.log('Current Environment:', this.getCurrentEnv());
         console.log('Base Path:', this.getBasePath());
         console.log('Hostname:', window.location.hostname);
+        console.log('URL Param "env":', urlParams.get('env'));
+        console.log('Stored Environment:', storedEnv);
+        console.log('Current URL:', window.location.href);
+        console.log('==============================');
     }
 };
 
