@@ -431,29 +431,67 @@
     
     <!-- 環境別アイコン・情報設定 -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (window.siteConfig) {
-                const currentEnv = window.siteConfig.getCurrentEnv();
+        // より確実な初期化処理
+        function initStagingEnvironment() {
+            console.log('Staging initialization started');
+            
+            if (!window.siteConfig) {
+                console.log('siteConfig not available, retrying...');
+                setTimeout(initStagingEnvironment, 100);
+                return;
+            }
+            
+            const currentEnv = window.siteConfig.getCurrentEnv();
+            console.log('Current environment:', currentEnv);
+            
+            if (currentEnv === 'staging') {
+                console.log('Applying staging environment changes...');
                 
-                if (currentEnv === 'staging') {
-                    // LINEアイコンの切り替え
-                    const lineIcon = document.querySelector('img[src="assets/images/line.ico"]');
-                    if (lineIcon) {
-                        const basePath = window.siteConfig.getBasePath();
-                        lineIcon.src = `${basePath ? basePath + '/' : ''}assets/images/line_sample.ico`;
-                        lineIcon.alt = 'LINE公式アカウント (staging)';
-                    }
-                    
-                    // 電話番号をマスク
-                    const phoneNumber = document.querySelector('.phone-number');
-                    if (phoneNumber) {
-                        phoneNumber.textContent = '070-xxxx-xxxx';
-                        phoneNumber.style.color = '#888';
-                        phoneNumber.title = 'staging環境では電話番号が非表示になります';
+                // LINEアイコンの切り替え - より柔軟なセレクタ
+                const lineIcon = document.querySelector('img[alt*="LINE"], img[src*="line.ico"]');
+                console.log('LINE icon found:', lineIcon);
+                
+                if (lineIcon) {
+                    const basePath = window.siteConfig.getBasePath();
+                    const newSrc = `${basePath ? basePath + '/' : ''}assets/images/line_sample.ico`;
+                    console.log('Changing LINE icon to:', newSrc);
+                    lineIcon.src = newSrc;
+                    lineIcon.alt = 'LINE公式アカウント (staging)';
+                }
+                
+                // 電話番号をマスク - より確実な方法
+                const phoneNumber = document.querySelector('.phone-number');
+                console.log('Phone number element found:', phoneNumber);
+                
+                if (phoneNumber) {
+                    console.log('Masking phone number');
+                    phoneNumber.textContent = '070-xxxx-xxxx';
+                    phoneNumber.style.color = '#888';
+                    phoneNumber.title = 'staging環境では電話番号が非表示になります';
+                } else {
+                    // 別のセレクタで電話番号を探す
+                    const allElements = document.querySelectorAll('*');
+                    for (let element of allElements) {
+                        if (element.textContent && element.textContent.includes('070-2322-3239')) {
+                            console.log('Found phone number in element:', element);
+                            element.textContent = element.textContent.replace('070-2322-3239', '070-xxxx-xxxx');
+                            element.style.color = '#888';
+                            element.title = 'staging環境では電話番号が非表示になります';
+                            break;
+                        }
                     }
                 }
+                
+                console.log('Staging environment changes applied');
             }
-        });
+        }
+        
+        // DOMContentLoadedで実行
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initStagingEnvironment);
+        } else {
+            initStagingEnvironment();
+        }
     </script>
     <script src="assets/menu.js"></script>
 </body>
