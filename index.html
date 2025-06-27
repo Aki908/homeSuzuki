@@ -393,6 +393,14 @@
                         <li>ご住所</li>
                         <li>ご希望の商品名や内容</li>
                     </ul>
+                    <div class="additional-info" style="margin-top: 1.5rem;">
+                        <p><strong>以下のようなご相談も承ります：</strong></p>
+                        <ul>
+                            <li>サイトに掲載のない商品のお取り寄せ</li>
+                            <li>田舎や離島など、他社が対応していない地域への配送</li>
+                        </ul>
+                        <p style="margin-top: 0.8rem;">お気軽にお問い合わせください！</p>
+                    </div>
                 </div>
             </div>
 
@@ -420,6 +428,23 @@
     <footer>
         <p>&copy; 2025 UUMAIZING. All rights reserved.</p>
     </footer>
+    
+    <!-- 環境別アイコン設定 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // LINEアイコンの環境別切り替え
+            const lineIcon = document.querySelector('img[src="assets/images/line.ico"]');
+            if (lineIcon && window.siteConfig) {
+                const currentEnv = window.siteConfig.getCurrentEnv();
+                if (currentEnv === 'staging') {
+                    // staging環境では line_sample.ico を使用
+                    const basePath = window.siteConfig.getBasePath();
+                    lineIcon.src = `${basePath ? basePath + '/' : ''}assets/images/line_sample.ico`;
+                    lineIcon.alt = 'LINE公式アカウント (staging)';
+                }
+            }
+        });
+    </script>
     <script src="assets/menu.js"></script>
 </body>
 </html>
