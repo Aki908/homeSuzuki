@@ -429,18 +429,28 @@
         <p>&copy; 2025 UUMAIZING. All rights reserved.</p>
     </footer>
     
-    <!-- 環境別アイコン設定 -->
+    <!-- 環境別アイコン・情報設定 -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // LINEアイコンの環境別切り替え
-            const lineIcon = document.querySelector('img[src="assets/images/line.ico"]');
-            if (lineIcon && window.siteConfig) {
+            if (window.siteConfig) {
                 const currentEnv = window.siteConfig.getCurrentEnv();
+                
                 if (currentEnv === 'staging') {
-                    // staging環境では line_sample.ico を使用
-                    const basePath = window.siteConfig.getBasePath();
-                    lineIcon.src = `${basePath ? basePath + '/' : ''}assets/images/line_sample.ico`;
-                    lineIcon.alt = 'LINE公式アカウント (staging)';
+                    // LINEアイコンの切り替え
+                    const lineIcon = document.querySelector('img[src="assets/images/line.ico"]');
+                    if (lineIcon) {
+                        const basePath = window.siteConfig.getBasePath();
+                        lineIcon.src = `${basePath ? basePath + '/' : ''}assets/images/line_sample.ico`;
+                        lineIcon.alt = 'LINE公式アカウント (staging)';
+                    }
+                    
+                    // 電話番号をマスク
+                    const phoneNumber = document.querySelector('.phone-number');
+                    if (phoneNumber) {
+                        phoneNumber.textContent = '070-xxxx-xxxx';
+                        phoneNumber.style.color = '#888';
+                        phoneNumber.title = 'staging環境では電話番号が非表示になります';
+                    }
                 }
             }
         });
