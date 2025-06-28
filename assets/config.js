@@ -7,7 +7,7 @@ const config = {
     // 環境設定
     environments: {
         production: {
-            domain: 'www.foodfamily.jp',  // ここに取得したドメインを設定
+            domain: 'www.uumaizing.com',  // ここに取得したドメインを設定
             basePath: '',  // ルートパスを使用
             isDebug: false
         },
@@ -17,7 +17,7 @@ const config = {
             isDebug: false
         },
         customDomain: {
-            domain: 'www.foodfamily.jp',  // ここに取得したドメインを設定
+            domain: 'www.uumaizing.com',  // ここに取得したドメインを設定
             basePath: '',  // ルートパスを使用
             isDebug: false
         },
@@ -52,7 +52,7 @@ const config = {
         const hostname = window.location.hostname;
         
         // 各環境を明確に判定
-        if (hostname.includes('www.foodfamily.jp')) {
+        if (hostname.includes('www.uumaizing.com')) {
             return 'production';
         }
         if (hostname.includes('akihisasa.github.io')) {
