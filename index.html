@@ -78,10 +78,17 @@
             border-radius: 20px;
             text-align: center;
         }
-        #hero h1 {
+        .brand-name {
             font-size: 4.2rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            color: #007bff;
             margin-bottom: 1.5rem;
-            font-weight: 700;
+        }
+        #hero h1 {
+            font-size: 1.5rem !important;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
         #hero p {
             font-size: 1.5rem;
@@ -200,8 +207,27 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>UUMAIZING</h1>
-                <p>あなたの日常に、ちょっとした幸せを</p>
+                <div class="brand-name">UUMAIZING</div>
+                <h1>市川市から1時間以内なら基本料金で配達します！</h1>
+                <p>買い物代行・配達のプロにおまかせ！</p>
+                <p>「配達料が高くて困ってる…」そんなあなたに！</p>
+                <p><strong>UUMAIZING</strong>（うまい＋驚き）なサービスを体験してください。</p>
+                <div class="hero-buttons">
+                    <a href="#shopping-service" class="btn btn-primary">料金を見る</a>
+                    <a href="#contact" class="btn btn-secondary">問い合わせる</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="service-intro">
+            <div class="container">
+                <h2>こんなサービスです</h2>
+                <ul class="service-features" style="text-align: center; list-style: none; padding: 0;">
+                    <li style="text-align: center; list-style: none;">✔ 市川市から1時間圏内なら配達基本料金でOK！</li>
+                    <li style="text-align: center; list-style: none;">✔ 商品の購入代行も承ります（例：コストコ、ドンキ、業務スーパー）</li>
+                    <li style="text-align: center; list-style: none;">✔ 掲載商品は「過去の一例」です。あなたのリクエストにも柔軟対応！</li>
+                    <li style="text-align: center; list-style: none;">✔ 市川市から1時間以上でもご相談いただければ柔軟に対応します！</li>
+                </ul>
             </div>
         </section>
 
@@ -209,7 +235,7 @@
             <div class="service-banner">
                 <h2>🌟どんな物でもお買い物代行します！</h2>
                 <p class="service-subtitle">「重くて運べない…」「買いに行く時間がない…」<br>
-                そんなあなたのために、<strong>UUMAIZING（ウマイジング）</strong>が代わりにお買い物に行きます！</p>
+                そんなあなたのために、<strong>UUMAIZING（うまいじんぐ）</strong>が代わりにお買い物に行きます！</p>
             </div>
 
             <div class="service-content">
@@ -230,17 +256,40 @@
                 </div>
 
                 <div class="service-section">
-                    <h3>💰料金プラン（わかりやすく、安心価格）</h3>
-                    <div class="pricing-plans">
-                        <div class="pricing-card">
-                            <div class="price-amount">お買い物金額 ¥20,000まで</div>
-                            <div class="price-fee">→ 1回 ¥1,500</div>
+                    <h2 id="price">配達料金</h2>
+                    <p>市川市から1時間以内の方は、以下の基本料金で配達します。</p>
+                    
+                    <div class="pricing-boxes" style="display: flex; gap: 1.5rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap;">
+                        <div class="price-box" style="border: 2px solid #007bff; background: white; padding: 1.5rem; text-align: center; min-width: 200px; flex: 1; max-width: 220px; border-radius: 5px;">
+                            <div class="price-range" style="font-size: 1rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">お買い物金額</div>
+                            <div class="price-range" style="font-size: 1.2rem; font-weight: 700; color: #333; margin-bottom: 1rem;">〜20,000円まで</div>
+                            <div style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">配達料金</div>
+                            <div class="price-amount" style="font-size: 2rem; font-weight: 700; color: #007bff;">1,500円</div>
                         </div>
-                        <div class="pricing-card">
-                            <div class="price-amount">お買い物金額 ¥40,000まで</div>
-                            <div class="price-fee">→ 1回 ¥3,000</div>
+                        
+                        <div class="price-box" style="border: 2px solid #007bff; background: white; padding: 1.5rem; text-align: center; min-width: 200px; flex: 1; max-width: 220px; border-radius: 5px;">
+                            <div class="price-range" style="font-size: 1rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">お買い物金額</div>
+                            <div class="price-range" style="font-size: 1.2rem; font-weight: 700; color: #333; margin-bottom: 1rem;">〜40,000円まで</div>
+                            <div style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">配達料金</div>
+                            <div class="price-amount" style="font-size: 2rem; font-weight: 700; color: #007bff;">2,800円</div>
+                        </div>
+                        
+                        <div class="price-box" style="border: 2px solid #007bff; background: white; padding: 1.5rem; text-align: center; min-width: 200px; flex: 1; max-width: 220px; border-radius: 5px;">
+                            <div class="price-range" style="font-size: 1rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">お買い物金額</div>
+                            <div class="price-range" style="font-size: 1.2rem; font-weight: 700; color: #333; margin-bottom: 1rem;">〜60,000円まで</div>
+                            <div style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">配達料金</div>
+                            <div class="price-amount" style="font-size: 2rem; font-weight: 700; color: #007bff;">4,000円</div>
                         </div>
                     </div>
+                    
+                    <div style="text-align: center; margin: 2rem 0; padding: 1.5rem; background: #fff3cd; border-radius: 8px; border-left: 4px solid #ffc107;">
+                        <p style="margin: 0; font-size: 1.1rem; font-weight: 600; color: #856404;">
+                            <strong>60,000円以上のお買い物をご希望の方</strong><br>
+                            お気軽にお問い合わせください！柔軟に対応いたします。
+                        </p>
+                    </div>
+                    
+                    <p>※1時間以上の場合も、ご相談いただければ柔軟に対応いたします。</p>
                 </div>
 
 
@@ -257,6 +306,12 @@
 
         <section id="products">
             <h2>取扱商品</h2>
+            <div class="products-intro" style="text-align: center; margin: 2rem auto 3rem; max-width: 600px; padding: 1.5rem; background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%); border-radius: 10px; border-left: 4px solid #2196f3;">
+                <p style="margin: 0; font-size: 1.1rem; line-height: 1.6; color: #333;">
+                    以下は、実際にご依頼いただいた商品の一例です。<br>
+                    ご希望の商品があれば、お気軽にご相談ください！
+                </p>
+            </div>
             <div class="category-sections">
                 <section class="category-group">
                     <h3 class="category-group-title">食品・飲料</h3>
@@ -379,11 +434,28 @@
             </div>
         </section>
 
+        <section id="delivery-area">
+            <div style="max-width: 800px; margin: 0 auto; padding: 4rem 2rem; text-align: center;">
+                <h2>配達対応エリア</h2>
+                <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 2rem; border-radius: 15px; margin: 2rem 0; border-left: 4px solid #28a745;">
+                    <p style="font-size: 1.2rem; margin-bottom: 1rem; color: #333;">
+                        千葉県市川市を中心に、<strong>おおよそ1時間圏内</strong>でお届けします。
+                    </p>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #666;">
+                        （東京23区、船橋、松戸、浦安、柏など）
+                    </p>
+                    <p style="font-size: 1.1rem; margin: 0; color: #28a745; font-weight: 600;">
+                        1時間以上のエリアもご相談可能です！
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <section id="contact">
             <h2>お問い合わせ・ご注文</h2>
             
             <div class="contact-info">
-                <h3>📅営業日・ご注文方法</h3>
+                <h3>営業日・ご注文方法</h3>
                 <p><strong>営業日：</strong>月〜金</p>
                 <p><strong>受付方法：</strong>LINE または お電話で</p>
                 <div class="order-requirements">
@@ -397,7 +469,6 @@
                         <p><strong>以下のようなご相談も承ります：</strong></p>
                         <ul>
                             <li>サイトに掲載のない商品のお取り寄せ</li>
-                            <li>田舎や離島など、他社が対応していない地域への配送</li>
                         </ul>
                         <p style="margin-top: 0.8rem;">お気軽にお問い合わせください！</p>
                     </div>
