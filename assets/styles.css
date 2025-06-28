@@ -13,6 +13,64 @@ img, table, pre, code, iframe, video, audio, canvas, svg {
     box-sizing: border-box !important;
 }
 
+/* 配達エリア地図のレスポンシブ対応 */
+.delivery-map-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* 4:3のアスペクト比 */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.map-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .delivery-map-container {
+        margin: 2rem 0 !important;
+        padding: 1rem !important;
+    }
+    
+    .delivery-map-container h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .map-wrapper {
+        padding-bottom: 80%; /* モバイルでは少し縦長に */
+    }
+}
+
+@media (max-width: 480px) {
+    .delivery-map-container {
+        margin: 1.5rem 0 !important;
+        padding: 0.8rem !important;
+    }
+    
+    .delivery-map-container h3 {
+        font-size: 1rem !important;
+    }
+    
+    .map-wrapper {
+        padding-bottom: 85%; /* 小さな画面ではさらに縦長に */
+    }
+}
+
 /* テキスト要素の幅制限 */
 p, h1, h2, h3, h4, h5, h6, div, span, li, td, th {
     max-width: 100%;
